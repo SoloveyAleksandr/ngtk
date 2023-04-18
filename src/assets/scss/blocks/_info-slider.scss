@@ -1,0 +1,55 @@
+.info-slider {
+  padding: 14rem 0;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.2rem solid $red;
+    padding-bottom: 3.9rem;
+    margin-bottom: 3.9rem;
+  }
+
+  &__title {
+    font-family: $font-next;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__btn {
+    width: 4rem;
+    height: 4.5rem;
+    padding: 0;
+    border: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      svg {
+        fill: $red;
+      }
+    }
+
+    &.swiper-button-disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    svg {
+      object-fit: contain;
+      object-position: center center;
+      width: 100%;
+      height: 100%;
+      fill: $black;
+      transition: .3s;
+    }
+  }
+}

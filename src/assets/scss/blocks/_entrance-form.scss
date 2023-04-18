@@ -1,0 +1,141 @@
+.entrance-form {
+  padding: 13.9rem 0;
+  background-color: $red;
+
+  &-container {
+    padding: 3.9rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    border-top: 0.2rem solid $white;
+    border-bottom: 0.2rem solid $white;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__title {
+    font-family: $font-next;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    color: $white;
+  }
+
+  &__text {
+    color: $white;
+    max-width: 52rem;
+  }
+
+  &-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1.4rem;
+    background-color: $white;
+    border: none;
+    border-radius: 0.4rem;
+    outline: none;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+
+    &::placeholder {
+      color: $grey;
+    }
+  }
+
+  &-checkbox {
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+
+    input {
+      display: none;
+    }
+
+    ._checked & {
+      &__icon {
+        svg {
+          &:nth-child(2) {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      flex: none;
+      width: 1.6rem;
+      height: 1.6rem;
+      background-color: $white;
+      border-radius: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      svg {
+        position: absolute;
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+        transition: .3s cubic-bezier(0.35, 1.07, 0.82, 1.39);
+
+        &:nth-child(1) {
+          stroke: $grey;
+        }
+
+        &:nth-child(2) {
+          transform: scale(0);
+          opacity: 0;
+          stroke: $red;
+        }
+      }
+    }
+
+    &__text {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+      color: inherit;
+
+      a {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 1.6rem 3.2rem;
+    color: $white;
+    background-color: $black;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 700;
+    font-family: $font-next;
+    border: none;
+    outline: none;
+  }
+}

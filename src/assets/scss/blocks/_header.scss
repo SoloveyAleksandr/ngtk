@@ -1,0 +1,114 @@
+.header {
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &-logo {
+    height: 9rem;
+
+    img {
+      object-fit: contain;
+      object-position: center center;
+      height: 100%;
+    }
+  }
+
+  &-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.6rem;
+
+    &__title {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    &__info {
+      font-weight: 400;
+      text-decoration: underline;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__link {
+      color: $red;
+      font-weight: 700;
+    }
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &__btn {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: .3s;
+
+      &:hover {
+        color: $red;
+
+        svg {
+          stroke: $red;
+        }
+      }
+
+      svg {
+        transition: .3s;
+        object-fit: contain;
+        object-position: center center;
+        width: 2.4rem;
+        height: 2.4rem;
+        stroke: $black;
+      }
+    }
+  }
+
+  &-nav {
+    background-color: $red;
+    padding: 1rem 0;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      gap: 0.6rem;
+      color: $white;
+      font-weight: 700;
+      font-family: $font-next;
+
+      svg {
+        object-fit: contain;
+        object-position: center center;
+        width: 1.6rem;
+        height: 1.6rem;
+        stroke: $white;
+      }
+    }
+  }
+}

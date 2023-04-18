@@ -1,0 +1,39 @@
+// @font-face {
+//   font-family: "Rubik";
+//   src: local("Rubik"), local("Rubik-Regular"), url("../fonts/Rubik.woff2") format("woff2"),
+//     url("../fonts/Rubik.woff") format("woff"), url("../fonts/Rubik.ttf") format("truetype");
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: "Next Art";
+  src: local("Next Art"), local("Next Art"), url("../fonts/Nextart_bold.woff2") format("woff2"),
+    url("../fonts/Nextart_bold.woff") format("woff"), url("../fonts/Nextart_bold.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Next Art";
+  src: local("Next Art"), local("Next Art"), url("../fonts/Nextart_heavy.woff2") format("woff2"),
+    url("../fonts/Nextart_heavy.woff") format("woff"), url("../fonts/Nextart_heavy.otf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hauora";
+  src: local("Hauora"), local("Hauora"), url("../fonts/Hauora-Regular.woff2") format("woff2"),
+    url("../fonts/Hauora-Regular.woff") format("woff"), url("../fonts/Hauora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hauora";
+  src: local("Hauora"), local("Hauora"), url("../fonts/Hauora-Bold.woff2") format("woff2"),
+    url("../fonts/Hauora-Bold.woff") format("woff"), url("../fonts/Hauora-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
