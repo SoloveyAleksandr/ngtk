@@ -64,4 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
   }
+
+  const reviewsSliders = document.querySelectorAll(".reviews");
+  reviewsSliders.forEach(wrapper => {
+    console.log(wrapper);
+    const swiper = wrapper.querySelector(".swiper");
+    const prevBtn = wrapper.querySelector(".info-slider__btn_left");
+    const nextBtn = wrapper.querySelector(".info-slider__btn_right");
+    new Swiper(swiper, {
+      speed: 1000,
+      navigation: {
+        nextEl: nextBtn,
+        prevEl: prevBtn,
+      },
+    })
+  })
 })
