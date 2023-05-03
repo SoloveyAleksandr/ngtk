@@ -1,5 +1,4 @@
 .header {
-
   &-container {
     display: flex;
     align-items: center;
@@ -61,7 +60,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      transition: .3s;
+      transition: 0.3s;
 
       &:hover {
         color: $red;
@@ -72,7 +71,7 @@
       }
 
       svg {
-        transition: .3s;
+        transition: 0.3s;
         object-fit: contain;
         object-position: center center;
         width: 2.4rem;
@@ -101,6 +100,7 @@
       color: $white;
       font-weight: 700;
       font-family: $font-next;
+      transition: 0.3s;
 
       svg {
         object-fit: contain;
@@ -108,6 +108,46 @@
         width: 1.6rem;
         height: 1.6rem;
         stroke: $white;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &-dropdown {
+      position: relative;
+
+      &:hover {
+        .header-nav__link {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      
+      &:hover & {
+        &__content {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+
+      &__content {
+        position: absolute;
+        width: max-content;
+        z-index: 10;
+        top: 100%;
+        left: -2rem;
+        padding: 3rem 2rem;
+        border-radius: 0.8rem;
+        background-color: $red;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
       }
     }
   }
