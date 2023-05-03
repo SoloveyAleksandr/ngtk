@@ -112,7 +112,7 @@
     height: 0;
     opacity: 0;
     pointer-events: none;
-    transition: .3s;
+    transition: 0.3s;
     overflow: hidden;
   }
 }
@@ -181,5 +181,50 @@
       height: 100%;
       width: 100%;
     }
+  }
+}
+
+.page-info {
+  padding: 14rem 0rem 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    &__link {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      color: rgb(162, 162, 162);
+
+      &::after {
+        content: ">";
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        color: $red;
+        pointer-events: none;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-family: $font-next;
   }
 }

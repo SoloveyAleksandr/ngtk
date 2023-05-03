@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
+
   class Checkbox {
     constructor(wrapper) {
       this.wrapper = wrapper;
@@ -26,6 +30,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class DromDocInfo {
+    constructor(container) {
+      this.container = container;
+      this.btn = this.container.querySelector(".doc-info-item-drop-btn");
+      this.content = this.container.querySelector(".doc-info-item-drop__content");
+      this.isOpen = false;
+      this.maxHeight = 0;
+
+      if (this.container && this.btn && this.content) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.maxHeight = this.content.offsetHeight + 100;
+      this.btn.addEventListener("click", this.handleClick.bind(this));
+      this.close();
+    }
+
+    handleClick() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+
+    open() {
+      this.isOpen = true;
+      this.content.style.maxHeight = this.maxHeight + "px";
+      this.container.classList.add("_open");
+    }
+
+    close() {
+      this.isOpen = false;
+      this.content.style.maxHeight = "0rem";
+      this.container.classList.remove("_open");
+    }
+  }
+
   const checkboxList = document.querySelectorAll("[data-checkbox]");
   checkboxList.forEach(item => new Checkbox(item));
 
@@ -43,10 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     })
   })
-
-  Fancybox.bind("[data-fancybox]", {
-    // Your custom options
-  });
 
   if (document.querySelector(".main-about")) {
     const swiper = new Swiper(".main-about-swiper", {
@@ -78,5 +118,20 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: prevBtn,
       },
     })
+  })
+
+  // дорисовка типа документа для > UL > doc-info
+  const dataDocTypeItems = document.querySelectorAll("[data-doc-type]");
+  dataDocTypeItems.forEach(item => {
+    const type = item.getAttribute("data-doc-type");
+    const typeSpan = document.createElement("span");
+    typeSpan.className = "_type";
+    typeSpan.innerText = type;
+    item.appendChild(typeSpan);
+  })
+
+  const docInfoItemDrops = document.querySelectorAll(".doc-info-item-drop");
+  docInfoItemDrops.forEach(item => {
+    new DromDocInfo(item);
   })
 })
