@@ -124,10 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataDocTypeItems = document.querySelectorAll("[data-doc-type]");
   dataDocTypeItems.forEach(item => {
     const type = item.getAttribute("data-doc-type");
-    const typeSpan = document.createElement("span");
-    typeSpan.className = "_type";
-    typeSpan.innerText = type;
-    item.appendChild(typeSpan);
+    if (type) {
+      const typeSpan = document.createElement("span");
+      typeSpan.className = "_type";
+      typeSpan.innerText = type;
+      item.appendChild(typeSpan);
+    }
   })
 
   const docInfoItemDrops = document.querySelectorAll(".doc-info-item-drop");
