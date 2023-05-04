@@ -120,18 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // дорисовка типа документа для > UL > doc-info
-  const dataDocTypeItems = document.querySelectorAll("[data-doc-type]");
-  dataDocTypeItems.forEach(item => {
-    const type = item.getAttribute("data-doc-type");
-    if (type) {
-      const typeSpan = document.createElement("span");
-      typeSpan.className = "_type";
-      typeSpan.innerText = type;
-      item.appendChild(typeSpan);
-    }
-  })
-
   const docInfoItemDrops = document.querySelectorAll(".doc-info-item-drop");
   docInfoItemDrops.forEach(item => {
     new DromDocInfo(item);
