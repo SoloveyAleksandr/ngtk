@@ -80,3 +80,78 @@
     }
   }
 }
+
+@mixin text {
+  & >,
+  * > {
+    * {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: $font-next;
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+
+    a {
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      li {
+        padding-left: 1.3em;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 0.4rem;
+          height: 0.4rem;
+          border-radius: 50%;
+          background-color: $red;
+          position: absolute;
+          top: 50%;
+          left: 0.2em;
+          transform: translateY(-50%);
+        }
+
+        &[data-doc-type] {
+          padding-right: 5rem;
+
+          &::after {
+            content: attr(data-doc-type);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            color: rgba(161, 161, 161, 1);
+          }
+        }
+      }
+    }
+  }
+}
