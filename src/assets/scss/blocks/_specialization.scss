@@ -1,0 +1,66 @@
+.specialization {
+  &-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+
+    &-item {
+      border-radius: 0.8rem;
+      background: linear-gradient($red, $black);
+      padding: 0.2rem;
+
+      &__container {
+        height: 100%;
+        background-color: $white;
+        border-radius: 0.8rem;
+        padding: 3.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      &__title {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        font-weight: 700;
+        font-family: $font-next;
+        color: $red;
+        padding-bottom: 2rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 50%;
+          height: 0.2rem;
+          background-color: $red;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+
+      &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      &__text {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+
+        &_grey {
+          color: rgba(161, 161, 161, 1);
+        }
+      }
+    }
+  }
+}

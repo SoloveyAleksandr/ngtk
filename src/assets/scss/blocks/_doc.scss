@@ -82,6 +82,10 @@
 
       @include docText;
 
+      &._comment {
+        color: rgba(161, 161, 161, 1);
+      }
+
       &-drop {
         &._open & {
           &-btn {
@@ -611,7 +615,7 @@
     }
   }
 
-  &-plans {
+  &-contract {
     &-head {
       border-top: 0.2rem solid $black;
       border-bottom: 0.2rem solid $black;
@@ -630,6 +634,65 @@
 
       &:not(.doc-programs-head) {
         border-bottom: 0.2rem solid rgba(161, 161, 161, 1);
+      }
+
+      &__inner {
+        padding: 1rem;
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+
+        & >,
+        * > {
+          font-size: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+          font-family: inherit;
+          color: inherit;
+
+          a {
+            text-decoration: underline;
+            color: $red;
+            transition: 0.3s;
+
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-plans {
+    &-head {
+      border-top: 0.2rem solid $black;
+      border-bottom: 0.2rem solid $black;
+
+      &__text {
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+      }
+    }
+
+    &-item {
+      display: grid;
+      grid-template-columns: auto 27.77% 15.74% 15.74% 15.74% 21.29%;
+      padding: 2rem 0;
+
+      &:not(.doc-programs-head) {
+        border-bottom: 0.2rem solid rgba(161, 161, 161, 1);
+      }
+
+      &_result {
+        grid-template-columns: auto 15.74% 15.74% 15.74% 21.29%;
       }
 
       &__inner {

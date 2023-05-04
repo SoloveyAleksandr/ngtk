@@ -7,6 +7,14 @@
 @mixin docText {
   & >,
   * > {
+    * {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      font-family: inherit;
+      color: inherit;
+    }
+
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
