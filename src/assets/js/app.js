@@ -124,4 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
   docInfoItemDrops.forEach(item => {
     new DromDocInfo(item);
   })
+
+  // const docImages = document.querySelectorAll(".doc-images");
+  // docImages.forEach(grid => {
+  //   new Masonry(grid, {
+  //     itemSelector: ".doc-images-item",
+  //   });
+  // })
 })
