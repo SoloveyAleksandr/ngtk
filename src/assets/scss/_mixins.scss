@@ -9,17 +9,23 @@
   * > {
     * {
       font-size: inherit;
-      font-weight: inherit;
       line-height: inherit;
       font-family: inherit;
       color: inherit;
+
+      :not(strong) {
+        font-weight: inherit;
+      }
     }
 
     font-size: inherit;
-    font-weight: inherit;
     line-height: inherit;
     font-family: inherit;
     color: inherit;
+
+    :not(strong) {
+      font-weight: inherit;
+    }
 
     h1,
     h2,
@@ -78,6 +84,10 @@
         }
       }
     }
+
+    strong {
+      font-weight: 700;
+    }
   }
 }
 
@@ -86,17 +96,23 @@
   * > {
     * {
       font-size: inherit;
-      font-weight: inherit;
       line-height: inherit;
       font-family: inherit;
       color: inherit;
+
+      :not(strong) {
+        font-weight: inherit;
+      }
     }
 
     font-size: inherit;
-    font-weight: inherit;
     line-height: inherit;
     font-family: inherit;
     color: inherit;
+
+    :not(strong) {
+      font-weight: inherit;
+    }
 
     h1,
     h2,
@@ -152,6 +168,10 @@
           }
         }
       }
+    }
+
+    strong {
+      font-weight: 700;
     }
   }
 }
