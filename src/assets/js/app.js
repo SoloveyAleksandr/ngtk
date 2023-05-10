@@ -3,6 +3,61 @@ document.addEventListener("DOMContentLoaded", () => {
     // Your custom options
   });
 
+  class HeaderDrop {
+    constructor(container) {
+      this.container = container;
+      this.content = this.container.querySelector(".header-nav-dropdown__content");
+      this.btn = this.container.querySelector(".header-nav-dropdown__btn");
+      this.isOpen = false;
+      this.maxHeight = 0;
+
+      if (this.container && this.content && this.btn) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.maxHeight = this.content.offsetHeight * 1.5;
+
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        this.btn.addEventListener("click", (e) => this.handleClick.call(this, e))
+      } else {
+        this.container.addEventListener("mouseenter", this.open.bind(this));
+      }
+
+      this.container.addEventListener("mouseleave", this.close.bind(this));
+
+      this.close();
+    }
+
+    handleClick(e) {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        e.preventDefault();
+        this.open();
+      }
+    }
+
+    open() {
+      this.isOpen = true;
+      this.container.classList.add("_open");
+
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        this.content.style.maxHeight = this.maxHeight + "px";
+      }
+    }
+
+    close() {
+      this.isOpen = false;
+      this.container.classList.remove("_open");
+
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        this.content.style.maxHeight = 0 + "px";
+      }
+    }
+  }
+
   class Checkbox {
     constructor(wrapper) {
       this.wrapper = wrapper;
@@ -30,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  class DromDocInfo {
+  class DropDocInfo {
     constructor(container) {
       this.container = container;
       this.btn = this.container.querySelector(".doc-info-item-drop-btn");
@@ -68,6 +123,69 @@ document.addEventListener("DOMContentLoaded", () => {
       this.content.style.maxHeight = "0rem";
       this.container.classList.remove("_open");
     }
+  }
+
+  class HeaderMenu {
+    constructor(container, btn) {
+      this.container = container;
+      this.btn = btn;
+      this.isOpen = false;
+
+      if (this.container && this.btn) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.btn.addEventListener("click", this.handleClick.bind(this));
+    }
+
+    handleClick(e) {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        e.preventDefault();
+        this.open();
+      }
+    }
+
+    open() {
+      this.isOpen = true;
+      this.container.classList.add("_open");
+      this.btn.classList.add("_open");
+    }
+
+    close() {
+      this.isOpen = false;
+      this.container.classList.remove("_open");
+      this.btn.classList.remove("_open");
+    }
+  }
+
+  // dropwodn в шапке
+  const headerDrops = document.querySelectorAll(".header-nav-dropdown");
+  headerDrops.forEach(item => new HeaderDrop(item));
+
+  // меню
+  const header = document.querySelector(".header");
+  if (header) {
+    const headerMenu = header.querySelector(".header-menu");
+    const headerMenuBtn = header.querySelector(".header-controls__btn_menu");
+    const headerMenuNav = header.querySelector(".header-menu-nav");
+
+    const navFragment = document.createDocumentFragment();
+
+    const headerLoginBtn = header.querySelector(".header-controls__btn_login");
+    navFragment.appendChild(headerLoginBtn);
+
+    const headerNavBoxList = header.querySelectorAll(".header-box");
+    headerNavBoxList.forEach(item => {
+      navFragment.appendChild(item);
+    });
+
+    headerMenuNav.appendChild(navFragment);
+
+    const MENU = new HeaderMenu(headerMenu, headerMenuBtn);
   }
 
   const checkboxList = document.querySelectorAll("[data-checkbox]");
@@ -122,13 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const docInfoItemDrops = document.querySelectorAll(".doc-info-item-drop");
   docInfoItemDrops.forEach(item => {
-    new DromDocInfo(item);
+    new DropDocInfo(item);
   })
 
-  // const docImages = document.querySelectorAll(".doc-images");
-  // docImages.forEach(grid => {
-  //   new Masonry(grid, {
-  //     itemSelector: ".doc-images-item",
-  //   });
-  // })
 })

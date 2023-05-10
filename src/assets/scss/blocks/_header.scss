@@ -1,10 +1,19 @@
 .header {
+  @include breakpoint($xl-bp) {
+    position: relative;
+  }
+
   &-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    @include breakpoint($xl-bp) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
   }
 
   &-logo {
@@ -14,6 +23,10 @@
       object-fit: contain;
       object-position: center center;
       height: 100%;
+    }
+
+    @include breakpoint($xl-bp) {
+      height: 6rem;
     }
   }
 
@@ -54,6 +67,8 @@
     gap: 2rem;
 
     &__btn {
+      width: 2.4rem;
+      height: 2.4rem;
       border: none;
       background-color: transparent;
       outline: none;
@@ -71,12 +86,47 @@
       }
 
       svg {
+        flex: none;
         transition: 0.3s;
         object-fit: contain;
         object-position: center center;
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 100%;
+        height: 100%;
         stroke: $black;
+      }
+
+      &_menu {
+        display: none;
+        position: relative;
+
+        @include breakpoint($xl-bp) {
+          display: flex;
+        }
+
+        svg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: 0.3s;
+
+          &:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+          }
+        }
+
+        &._open {
+          svg {
+            &:nth-child(1) {
+              opacity: 0;
+              transform: scale(0);
+            }
+            &:nth-child(2) {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        }
       }
     }
   }
@@ -89,6 +139,13 @@
       display: flex;
       align-items: center;
       gap: 4rem;
+
+      @include breakpoint($xl-bp) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4rem 2rem;
+        gap: 2rem;
+      }
     }
 
     &__link {
@@ -118,18 +175,20 @@
     &-dropdown {
       position: relative;
 
-      &:hover {
+      &._open {
         .header-nav__link {
           svg {
             transform: rotate(180deg);
           }
         }
-      }
-      
-      &:hover & {
-        &__content {
+
+        .header-nav-dropdown__content {
           opacity: 1;
           pointer-events: all;
+
+          @include breakpoint($xl-bp) {
+            margin-top: 2rem;
+          }
         }
       }
 
@@ -148,6 +207,92 @@
         opacity: 0;
         pointer-events: none;
         transition: 0.3s;
+
+        @include breakpoint($xl-bp) {
+          position: static;
+          padding: 0rem 2rem;
+          width: 100%;
+        }
+
+        .header-nav__link {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &-menu {
+    @include breakpoint($xl-bp) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 10rem);
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-bottom: 4rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+
+      &._open {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &-nav {
+      @include breakpoint($xl-bp) {
+        padding: 0rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &:nth-child(1) {
+          order: 4;
+        }
+
+        &:nth-child(2) {
+          order: 2;
+        }
+
+        &:nth-child(3) {
+          order: 1;
+        }
+
+        &:nth-child(4) {
+          order: 3;
+        }
+
+        .header-box {
+          &:nth-child(2) {
+            order: 2;
+
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .header-box__title {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.6rem;
+            }
+          }
+
+          &:nth-child(3) {
+            order: 1;
+          }
+
+          &:nth-child(4) {
+            order: 3;
+          }
+        }
+
+        .header-controls__btn_login {
+          order: 4;
+        }
       }
     }
   }
