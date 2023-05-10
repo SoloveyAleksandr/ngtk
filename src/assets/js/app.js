@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // меню
   const header = document.querySelector(".header");
-  if (header) {
+  if (header && window.matchMedia("(max-width: 1024px)").matches) {
     const headerMenu = header.querySelector(".header-menu");
     const headerMenuBtn = header.querySelector(".header-controls__btn_menu");
     const headerMenuNav = header.querySelector(".header-menu-nav");
