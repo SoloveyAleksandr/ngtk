@@ -4,6 +4,18 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
 
+    @include breakpoint($xl-bp) {
+      gap: 2rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($sm-bp) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
     &-item {
       border-radius: 0.8rem;
       background: linear-gradient($red, $black);

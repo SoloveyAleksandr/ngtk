@@ -203,6 +203,14 @@
   flex-direction: column;
   gap: 4rem;
 
+  @include breakpoint($xl-bp) {
+    padding: 2rem 0rem 4rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    gap: 2rem;
+  }
+
   &-nav {
     display: flex;
     flex-wrap: wrap;
@@ -239,5 +247,10 @@
     font-size: 4rem;
     line-height: 4.5rem;
     font-family: $font-next;
+
+    @include breakpoint($sm-bp) {
+      font-size: 3rem;
+      line-height: 3.4rem;
+    }
   }
 }

@@ -4,11 +4,24 @@
   gap: 8rem;
   margin-bottom: 20rem;
 
+  @include breakpoint($xl-bp) {
+    flex-direction: column;
+    margin-bottom: 8rem;
+  }
+
+  @include breakpoint($lb-bp) {
+    gap: 4rem;
+  }
+
   &-nav {
     flex: none;
     width: 48rem;
     display: flex;
     flex-direction: column;
+
+    @include breakpoint($xl-bp) {
+      width: 100%;
+    }
 
     &__link {
       font-weight: 700;
@@ -21,6 +34,10 @@
       border-top: 0.2rem solid $black;
       border-bottom: 0.2rem solid $black;
       background-color: $white;
+
+      &:hover {
+        color: $red;
+      }
 
       &:not(:first-child) {
         margin-top: -0.2rem;
@@ -47,6 +64,14 @@
         svg {
           opacity: 1;
         }
+
+        @include breakpoint($sm-bp) {
+          padding-right: 0;
+
+          svg {
+            opacity: 0;
+          }
+        }
       }
     }
   }
@@ -56,12 +81,21 @@
     display: flex;
     flex-direction: column;
     gap: 8rem;
+
+    @include breakpoint($xl-bp) {
+      width: 100%;
+      overflow: hidden;
+    }
   }
 
   &-info {
     border-radius: 0.8rem;
     background: linear-gradient($red, $black);
     padding: 0.2rem;
+
+    @include breakpoint($xl-bp) {
+      width: 100%;
+    }
 
     &__content {
       background-color: $white;
@@ -71,6 +105,14 @@
       flex-direction: column;
       gap: 4rem;
       height: 100%;
+
+      @include breakpoint($lb-bp) {
+        padding: 3.8rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding: 1.8rem;
+      }
     }
 
     &-item {
@@ -144,6 +186,20 @@
           overflow: hidden;
           transition: 0.5s;
         }
+      }
+    }
+  }
+
+  &-table {
+    @include breakpoint($xl-bp) {
+      width: 100%;
+      padding-bottom: 2rem;
+      overflow: auto;
+    }
+
+    &__container {
+      @include breakpoint($xl-bp) {
+        width: 108rem;
       }
     }
   }
@@ -545,10 +601,20 @@
     flex-direction: column;
     gap: 4rem;
 
+    @include breakpoint($lb-bp) {
+      gap: 8rem;
+    }
+
     &-box {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 4rem;
+
+      @include breakpoint($lb-bp) {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+      }
 
       &.doc-images-box_3 {
         .doc-images-item {
@@ -565,6 +631,10 @@
 
             .doc-images-item__img {
               flex: 1;
+
+              @include breakpoint($lb-bp) {
+                flex: unset;
+              }
             }
 
             .doc-images-item__text {
@@ -580,8 +650,20 @@
         .doc-images-item {
           flex: 1;
 
+          @include breakpoint($lb-bp) {
+            flex: unset;
+          }
+
           .doc-images-item__img {
             height: 83.5rem;
+
+            @include breakpoint($lb-bp) {
+              height: 38rem;
+            }
+
+            @include breakpoint($sm-bp) {
+              height: 100%;
+            }
           }
         }
       }
@@ -599,6 +681,10 @@
         height: 38rem;
         border-radius: 0.8rem;
         overflow: hidden;
+
+        @include breakpoint($sm-bp) {
+          height: 100%;
+        }
 
         img {
           object-fit: cover;
@@ -731,6 +817,18 @@
   }
 
   &-statements {
+    @include breakpoint($xl-bp) {
+      width: 100%;
+      padding-bottom: 2rem;
+      overflow: auto;
+    }
+
+    &__container {
+      @include breakpoint($xl-bp) {
+        width: 164rem;
+      }
+    }
+
     &-head {
       display: grid;
       grid-template-columns: auto 36.57% 36.57%;

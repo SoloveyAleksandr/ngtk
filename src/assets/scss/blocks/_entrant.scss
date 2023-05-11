@@ -4,5 +4,9 @@
     flex-direction: column;
     gap: 8rem;
     margin-bottom: 20rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 8rem;
+    }
   }
 }
