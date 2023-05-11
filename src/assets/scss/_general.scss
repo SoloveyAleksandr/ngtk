@@ -56,6 +56,10 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+
+    @include breakpoint($xl-bp) {
+      padding: 1.8rem;
+    }
   }
 
   &__info {
@@ -96,6 +100,7 @@
 
   &__text {
     margin-top: auto;
+    overflow: hidden;
   }
 
   &__btn {

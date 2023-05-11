@@ -4,12 +4,39 @@
     position: relative;
     padding-top: 14rem;
 
+    @include breakpoint($xl-bp) {
+      padding-top: 2rem;
+      height: unset;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      margin-bottom: 18rem;
+    }
+
     &__bg {
       position: absolute;
       top: 0;
       right: 0;
       height: 100%;
       width: calc(50% - 2rem);
+
+      @include breakpoint($xl-bp) {
+        position: static;
+        width: 100%;
+        order: 2;
+        height: 65rem;
+      }
+
+      @include breakpoint($lb-bp) {
+        height: 50rem;
+      }
+
+      @include breakpoint($lb-bp) {
+        height: 35.5rem;
+      }
 
       img {
         object-fit: cover;
@@ -24,7 +51,18 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 4rem;
-      max-width: calc(50% - 2rem);
+      // max-width: calc(50% - 2rem);
+      padding-right: 45%;
+
+      @include breakpoint($xl-bp) {
+        max-width: unset;
+        order: 1;
+        gap: 2rem;
+      }
+
+      @include breakpoint($lb-bp) {
+        padding-right: 2rem;
+      }
     }
 
     &__title {
@@ -32,6 +70,11 @@
       font-weight: 900;
       font-size: 7rem;
       line-height: 7.9rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 3.4rem;
+        line-height: 3.9rem;
+      }
     }
 
     &__list {
@@ -77,11 +120,26 @@
       bottom: 14rem;
       left: calc(50% + 2rem);
       transform: translateX(-50%);
+
+      @include breakpoint($lb-bp) {
+        left: 2rem;
+        transform: none;
+      }
+
+      @include breakpoint($lb-bp) {
+        left: 50%;
+        transform: translateX(-50%) translateY(50%);
+        bottom: 0;
+      }
     }
   }
 
   &-advantages {
     padding: 15rem 0;
+
+    @include breakpoint($xl-bp) {
+      padding: 8rem 0;
+    }
 
     &__head {
       border-bottom: 0.2rem solid $red;
@@ -95,6 +153,12 @@
       font-weight: 900;
       font-family: $font-next;
       max-width: 52rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 3rem;
+        line-height: 3.4rem;
+        max-width: unset;
+      }
     }
 
     &-info {
@@ -102,6 +166,10 @@
       display: flex;
       flex-direction: column;
       gap: 3.9rem;
+
+      @include breakpoint($xl-bp) {
+        padding: 0;
+      }
 
       &__item {
         display: flex;
@@ -117,6 +185,11 @@
         line-height: 6.8rem;
         font-family: $font-next;
         color: $red;
+
+        @include breakpoint($xl-bp) {
+          font-size: 2.6rem;
+          line-height: 2.9rem;
+        }
       }
 
       &__text {
@@ -127,6 +200,16 @@
 
   &-prof-slider {
     background-color: $light-grey;
+
+    &__link {
+      text-align: center;
+      display: none;
+      margin-top: 4rem;
+
+      @include breakpoint($sm-bp) {
+        display: block;
+      }
+    }
   }
 
   &-doc {
@@ -287,7 +370,7 @@
           height: 0;
           opacity: 0;
           pointer-events: none;
-          transition: .3s;
+          transition: 0.3s;
         }
       }
     }
@@ -332,7 +415,7 @@
       justify-content: space-between;
       background-color: transparent;
       position: relative;
-      transition: .3s;
+      transition: 0.3s;
 
       &:hover {
         svg {
@@ -364,7 +447,7 @@
         height: 2rem;
         fill: $black;
         opacity: 0;
-        transition: .3s;
+        transition: 0.3s;
       }
     }
 

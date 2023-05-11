@@ -142,7 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   class HeaderMenu {
-    constructor(container, btn) {
+    constructor(header, container, btn) {
+      this.header = header;
       this.container = container;
       this.btn = btn;
       this.isOpen = false;
@@ -169,12 +170,14 @@ document.addEventListener("DOMContentLoaded", () => {
       this.isOpen = true;
       this.container.classList.add("_open");
       this.btn.classList.add("_open");
+      this.header.classList.add("_open");
     }
 
     close() {
       this.isOpen = false;
       this.container.classList.remove("_open");
       this.btn.classList.remove("_open");
+      this.header.classList.remove("_open");
     }
   }
 
@@ -201,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     headerMenuNav.appendChild(navFragment);
 
-    const MENU = new HeaderMenu(headerMenu, headerMenuBtn);
+    const MENU = new HeaderMenu(header, headerMenu, headerMenuBtn);
   }
 
   // footer adaptive
@@ -216,20 +219,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkboxList = document.querySelectorAll("[data-checkbox]");
   checkboxList.forEach(item => new Checkbox(item));
 
-  const infoSliderList = document.querySelectorAll(".info-slider");
-  infoSliderList.forEach(item => {
-    const swiper = item.querySelector(".info-slider-swiper");
-    const prevBtn = item.querySelector(".info-slider__btn_left");
-    const nextBtn = item.querySelector(".info-slider__btn_right");
-    new Swiper(swiper, {
-      slidesPerView: 4,
-      spaceBetween: 40,
-      navigation: {
-        nextEl: nextBtn,
-        prevEl: prevBtn,
-      },
+  if (window.matchMedia("(min-width: 501px)").matches) {
+    const infoSliderList = document.querySelectorAll(".info-slider");
+    infoSliderList.forEach(item => {
+      const swiper = item.querySelector(".info-slider-swiper");
+      const prevBtn = item.querySelector(".info-slider__btn_left");
+      const nextBtn = item.querySelector(".info-slider__btn_right");
+      new Swiper(swiper, {
+        slidesPerView: 2,
+        spaceBetween: 40,
+        navigation: {
+          nextEl: nextBtn,
+          prevEl: prevBtn,
+        },
+        breakpoints: {
+          1025: {
+            slidesPerView: 4,
+          },
+          741: {
+            slidesPerView: 3,
+          }
+        }
+      })
     })
-  })
+  }
 
   if (document.querySelector(".main-about")) {
     const swiper = new Swiper(".main-about-swiper", {

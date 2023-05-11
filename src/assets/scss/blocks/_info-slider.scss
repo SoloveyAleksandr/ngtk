@@ -1,6 +1,10 @@
 .info-slider {
   padding: 14rem 0;
 
+  @include breakpoint($xl-bp) {
+    padding: 8rem 0;
+  }
+
   &__head {
     display: flex;
     align-items: center;
@@ -8,6 +12,11 @@
     border-bottom: 0.2rem solid $red;
     padding-bottom: 3.9rem;
     margin-bottom: 3.9rem;
+
+    @include breakpoint($sm-bp) {
+      margin-bottom: 0;
+      border: none;
+    }
   }
 
   &__title {
@@ -15,12 +24,21 @@
     font-weight: 900;
     font-size: 4rem;
     line-height: 4.5rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 3rem;
+      line-height: 3.4rem;
+    }
   }
 
   &__controls {
     display: flex;
     align-items: center;
     gap: 4rem;
+
+    @include breakpoint($sm-bp) {
+      display: none;
+    }
   }
 
   &__btn {
@@ -49,7 +67,25 @@
       width: 100%;
       height: 100%;
       fill: $black;
-      transition: .3s;
+      transition: 0.3s;
+    }
+  }
+
+  &-swiper {
+    &-wrapper {
+      @include breakpoint($sm-bp) {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+      }
+    }
+
+    &-slide {
+      @include breakpoint($sm-bp) {
+        &:nth-child(3n + 1) {
+          display: none;
+        }
+      }
     }
   }
 }
