@@ -5,12 +5,30 @@
     align-items: center;
     gap: 8rem;
     margin-bottom: 20rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 8rem;
+      gap: 4rem;
+    }
   }
 
   &-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
+
+    @include breakpoint($xl-bp) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($lb-bp) {
+      gap: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
   }
 
   &-btn {

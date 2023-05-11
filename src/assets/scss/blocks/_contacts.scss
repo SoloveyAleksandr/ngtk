@@ -4,6 +4,11 @@
     grid-template-columns: auto 94rem;
     gap: 4rem;
     margin-bottom: 20rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 8rem;
+      grid-template-columns: 1fr;
+    }
   }
 
   &-info {
@@ -19,6 +24,10 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 2rem;
+
+      @include breakpoint($xl-bp) {
+        padding: 4rem 0;
+      }
 
       &:first-child {
         padding-top: 0;
@@ -55,5 +64,13 @@
     background-color: rgb(226, 226, 226);
     border-radius: 0.8rem;
     overflow: hidden;
+
+    @include breakpoint($xl-bp) {
+      height: 50rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      height: 40rem;
+    }
   }
 }

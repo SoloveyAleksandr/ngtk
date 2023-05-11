@@ -4,12 +4,20 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 8rem;
+    }
   }
 
   &-head {
     display: grid;
     grid-template-columns: 52rem auto;
     gap: 4rem;
+
+    @include breakpoint($xl-bp) {
+      grid-template-columns: 1fr;
+    }
 
     &__info {
       min-height: 46.8rem;
@@ -35,11 +43,19 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
 
+    @include breakpoint($lb-bp) {
+      grid-template-columns: 1fr;
+    }
+
     &-item {
       width: 100%;
       height: 46.8rem;
       border-radius: 0.8rem;
       overflow: hidden;
+
+      @include breakpoint($sm-bp) {
+        height: 19.5rem;
+      }
 
       img {
         object-fit: cover;
