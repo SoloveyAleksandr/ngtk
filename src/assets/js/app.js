@@ -3,6 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Your custom options
   });
 
+  const startWindowSize = window.innerWidth;
+  const breackpoint = 1024;
+  const isDescktop = startWindowSize > breackpoint;
+
+  window.onresize = () => {
+    if (isDescktop) {
+      if (window.innerWidth <= breackpoint) {
+        location.reload();
+      }
+    } else {
+      if (window.innerWidth > breackpoint) {
+        location.reload();
+      }
+    }
+  }
+
   class HeaderDrop {
     constructor(container) {
       this.container = container;
@@ -186,6 +202,15 @@ document.addEventListener("DOMContentLoaded", () => {
     headerMenuNav.appendChild(navFragment);
 
     const MENU = new HeaderMenu(headerMenu, headerMenuBtn);
+  }
+
+  // footer adaptive
+  const footer = document.querySelector(".footer");
+  if (footer && window.matchMedia("(max-width: 1024px)").matches) {
+    const footerInner = footer.querySelector(".footer-inner");
+    const footerContacts = footer.querySelector(".footer-contacts");
+
+    footerInner.appendChild(footerContacts);
   }
 
   const checkboxList = document.querySelectorAll("[data-checkbox]");
