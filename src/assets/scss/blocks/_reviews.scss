@@ -1,11 +1,23 @@
 .reviews {
   padding: 14rem 0;
 
+  @include breakpoint($xl-bp) {
+    padding: 8rem 0;
+  }
+
   &-swiper {
     &-slide {
       display: flex;
       align-items: center;
       gap: 4rem;
+
+      @include breakpoint($xl-bp) {
+        align-items: flex-start;
+      }
+
+      @include breakpoint($lb-bp) {
+        flex-direction: column;
+      }
 
       &__img {
         flex: none;
@@ -13,6 +25,20 @@
         height: 60rem;
         border-radius: 0.8rem;
         overflow: hidden;
+
+        @include breakpoint($xl-bp) {
+          width: 46.2rem;
+          height: 40.2rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          width: 100%;
+          height: 60rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          height: 30.5rem;
+        }
 
         img {
           object-fit: cover;
@@ -26,6 +52,14 @@
         flex: 1;
         padding: 14rem;
         position: relative;
+
+        @include breakpoint($xl-bp) {
+          padding: 14rem 2rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          padding: 10.7rem 2rem;
+        }
       }
 
       &__text {

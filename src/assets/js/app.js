@@ -269,6 +269,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = wrapper.querySelector(".info-slider__btn_right");
     new Swiper(swiper, {
       speed: 1000,
+      spaceBetween: 100,
+      autoHeight: true,
       navigation: {
         nextEl: nextBtn,
         prevEl: prevBtn,

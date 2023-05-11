@@ -82,7 +82,7 @@
 
     &-slide {
       @include breakpoint($sm-bp) {
-        &:nth-child(3n + 1) {
+        &:nth-child(n + 5) {
           display: none;
         }
       }

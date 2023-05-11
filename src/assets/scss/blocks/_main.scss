@@ -218,16 +218,29 @@
     flex-direction: column;
     gap: 15rem;
 
+    @include breakpoint($xl-bp) {
+      padding: 8rem 0;
+      gap: 8rem;
+    }
+
     &-item {
       display: flex;
       align-items: flex-start;
       gap: 4rem;
+
+      @include breakpoint($lb-bp) {
+        flex-direction: column;
+      }
 
       &__content {
         max-width: 38rem;
         display: flex;
         flex-direction: column;
         gap: 4rem;
+
+        @include breakpoint($lb-bp) {
+          max-width: 100%;
+        }
       }
 
       &__title {
@@ -235,6 +248,11 @@
         font-size: 4rem;
         line-height: 4.5rem;
         font-family: $font-next;
+
+        @include breakpoint($sm-bp) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+        }
       }
 
       &__list {
@@ -242,12 +260,33 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 4rem;
+
+        @include breakpoint($xl-bp) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint($lb-bp) {
+          width: 100%;
+        }
+
+        @include breakpoint($sm-bp) {
+          display: flex;
+          flex-direction: column;
+        }
       }
 
       &-img {
         height: 52rem;
         border-radius: 0.4rem;
         background-color: $white;
+
+        @include breakpoint($xl-bp) {
+          height: 40rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          height: 46rem;
+        }
 
         &_border {
           padding: 0.2rem;
@@ -267,6 +306,10 @@
   &-news {
     margin-bottom: 15rem;
 
+    @include breakpoint($xl-bp) {
+      margin-bottom: 8rem;
+    }
+
     &__title {
       font-weight: 900;
       font-size: 4rem;
@@ -280,6 +323,15 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 4rem;
       // height: 63.4rem;
+
+      @include breakpoint($xl-bp) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include breakpoint($sm-bp) {
+        display: flex;
+        flex-direction: column;
+      }
 
       &-item {
         // height: 100%;
@@ -306,6 +358,10 @@
           padding: 3.8rem;
           background-color: $white;
           border-radius: 0.8rem;
+
+          @include breakpoint($lb-bp) {
+            padding: 1.8rem;
+          }
         }
 
         &__img {
@@ -379,18 +435,36 @@
   &-about {
     margin-bottom: 15rem;
 
+    @include breakpoint($xl-bp) {
+      margin-bottom: 8rem;
+    }
+
     &__title {
       font-weight: 900;
       font-size: 4rem;
       line-height: 4.5rem;
       font-family: $font-next;
       margin-bottom: 6rem;
+
+      @include breakpoint($sm-bp) {
+        font-size: 3rem;
+        line-height: 3.4rem;
+        margin-bottom: 4rem;
+      }
     }
 
     &__inner {
       display: flex;
       align-items: flex-start;
       gap: 18rem;
+
+      @include breakpoint($xl-bp) {
+        gap: 4rem;
+      }
+
+      @include breakpoint($lb-bp) {
+        flex-direction: column;
+      }
     }
 
     &__btns {
@@ -398,6 +472,10 @@
       width: 24rem;
       display: flex;
       flex-direction: column;
+
+      @include breakpoint($lb-bp) {
+        width: 100%;
+      }
     }
 
     &__btn {
@@ -452,10 +530,22 @@
     }
 
     &-swiper {
+      @include breakpoint($lb-bp) {
+        width: 100%;
+      }
+
       &-slide {
         display: flex;
         flex-wrap: wrap;
         gap: 4rem;
+
+        @include breakpoint($xl-bp) {
+          gap: 2rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          flex-direction: column;
+        }
       }
     }
 
@@ -467,21 +557,41 @@
       border-radius: 0.8rem;
       width: calc(100% / 3 - 8rem / 3);
 
+      @include breakpoint($lb-bp) {
+        width: 100%;
+      }
+
       &__inner {
         background-color: $white;
         width: 100%;
         border-radius: 0.8rem;
         padding: 3.8rem;
+
+        @include breakpoint($xl-bp) {
+          padding: 1.8rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          padding: 3.8rem;
+        }
       }
 
       &:nth-child(1) {
         grid-area: 1/1/2/7;
         width: calc(50% - 2rem);
+
+        @include breakpoint($lb-bp) {
+          width: initial;
+        }
       }
 
       &:nth-child(2) {
         grid-area: 1/7/2/13;
         width: calc(50% - 2rem);
+
+        @include breakpoint($lb-bp) {
+          width: initial;
+        }
       }
 
       &__title {
@@ -521,6 +631,20 @@
 
   &-teacher-slider {
     padding: 15rem 0;
+
+    @include breakpoint($xl-bp) {
+      padding: 8rem 0;
+    }
+
+    &__link {
+      text-align: center;
+      display: none;
+      margin-top: 4rem;
+
+      @include breakpoint($sm-bp) {
+        display: block;
+      }
+    }
   }
 
   &-reviews {
@@ -529,5 +653,9 @@
 
   &-partners-slider {
     padding: 15rem 0;
+
+    @include breakpoint($xl-bp) {
+      padding: 8rem 0;
+    }
   }
 }
