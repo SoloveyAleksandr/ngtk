@@ -181,6 +181,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class UpBtn {
+    constructor(btn) {
+      this.btn = btn;
+      this.isVisable = false;
+
+      if (this.btn) {
+        this.init();
+      }
+    }
+
+    init() {
+      window.addEventListener("scroll", this.scrollHandler.bind(this));
+    }
+
+    scrollHandler() {
+      if (window.scrollY >= window.outerHeight && !this.isVisable) {
+        this.setVisable(true);
+      } else if (window.scrollY < window.outerHeight && this.isVisable) {
+        this.setVisable(false);
+      }
+    }
+
+    setVisable(bool) {
+      if (bool) {
+        this.btn.classList.add("_visable");
+        this.isVisable = true;
+      } else {
+        this.btn.classList.remove("_visable");
+        this.isVisable = false;
+      }
+    }
+  }
+
   // dropwodn в шапке
   const headerDrops = document.querySelectorAll(".header-nav-dropdown");
   headerDrops.forEach(item => new HeaderDrop(item));
@@ -263,7 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const reviewsSliders = document.querySelectorAll(".reviews");
   reviewsSliders.forEach(wrapper => {
-    console.log(wrapper);
     const swiper = wrapper.querySelector(".swiper");
     const prevBtn = wrapper.querySelector(".info-slider__btn_left");
     const nextBtn = wrapper.querySelector(".info-slider__btn_right");
@@ -282,5 +314,10 @@ document.addEventListener("DOMContentLoaded", () => {
   docInfoItemDrops.forEach(item => {
     new DropDocInfo(item);
   })
+
+  const upBtn = document.querySelector(".up-btn");
+  if (upBtn) {
+    new UpBtn(upBtn);
+  }
 
 })
