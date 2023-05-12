@@ -21,8 +21,10 @@
 
       &__img {
         flex: none;
-        width: 66rem;
-        height: 60rem;
+        // width: 66rem;
+        // height: 60rem;
+        width: 56rem;
+        height: 41rem;
         border-radius: 0.8rem;
         overflow: hidden;
 
@@ -50,7 +52,8 @@
 
       &__content {
         flex: 1;
-        padding: 14rem;
+        // padding: 14rem;
+        padding: 7.3rem 14rem;
         position: relative;
 
         @include breakpoint($xl-bp) {

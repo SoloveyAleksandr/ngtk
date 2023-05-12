@@ -68,8 +68,10 @@
     &__title {
       font-family: $font-next;
       font-weight: 900;
-      font-size: 7rem;
-      line-height: 7.9rem;
+      // font-size: 7rem;
+      // line-height: 7.9rem;
+      font-size: 5.8rem;
+      line-height: 6.6rem;
 
       @include breakpoint($xl-bp) {
         font-size: 3.4rem;
@@ -83,8 +85,15 @@
       gap: 1rem;
 
       li {
+        font-size: 2rem;
+        line-height: 2.7rem;
         padding-left: 2.6rem;
         position: relative;
+
+        @include breakpoint($lb-bp) {
+          font-size: 1.4rem;
+          line-height: 1.9rem;
+        }
 
         &::before {
           content: "";

@@ -1,7 +1,9 @@
 .footer {
   margin-top: auto;
   padding: 8rem 0;
-  background-color: $black;
+  // background-color: $black;
+  background-color: $white;
+  border-top: 0.2rem solid $black;
 
   &-container {
     display: flex;
@@ -37,6 +39,7 @@
   }
 
   &-logo {
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -61,7 +64,7 @@
       line-height: 2rem;
       font-weight: 700;
       font-family: $font-next;
-      color: $white;
+      // color: $white;
       max-width: 66.7rem;
 
       @include breakpoint($sm-bp) {
@@ -103,7 +106,7 @@
       }
 
       &__link {
-        color: $white;
+        // color: $white;
 
         &_dekor {
           text-decoration: underline;
@@ -113,7 +116,8 @@
   }
 
   &-contacts {
-    border: 0.2rem solid $white;
+    // border: 0.2rem solid $white;
+    border: 0.2rem solid $black;
     border-radius: 0.8rem;
     padding: 4rem;
     flex: none;
@@ -132,13 +136,13 @@
     }
 
     &__link {
-      color: $white;
+      // color: $white;
       font-family: $font-next;
       font-weight: 700;
     }
 
     &__text {
-      color: $white;
+      // color: $white;
     }
   }
 
@@ -147,7 +151,8 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 2rem;
-    border-top: 0.2rem solid $white;
+    // border-top: 0.2rem solid $white;
+    border-top: 0.2rem solid $black;
 
     @include breakpoint($sm-bp) {
       flex-direction: column;
