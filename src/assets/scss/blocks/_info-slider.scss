@@ -1,9 +1,5 @@
 .info-slider {
-  padding: 14rem 0;
-
-  @include breakpoint($xl-bp) {
-    padding: 8rem 0;
-  }
+  padding: 8rem 0;
 
   &__head {
     display: flex;
@@ -22,8 +18,8 @@
   &__title {
     font-family: $font-next;
     font-weight: 900;
-    font-size: 4rem;
-    line-height: 4.5rem;
+    font-size: 3.4rem;
+    line-height: 3.9rem;
 
     @include breakpoint($sm-bp) {
       font-size: 3rem;

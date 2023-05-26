@@ -37,11 +37,15 @@ html {
 }
 
 .prof-item {
-  height: 48rem;
+  height: 66rem;
   padding: 0.2rem;
   border-radius: 0.8rem;
   background: linear-gradient($red, $black);
   cursor: pointer;
+
+  @include breakpoint($sm-bp) {
+    height: 48rem;
+  }
 
   &:hover & {
     &__btn {
@@ -71,9 +75,14 @@ html {
     align-items: center;
     justify-content: space-between;
     color: $grey;
-    font-size: 1.4rem;
-    line-height: 1.9rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
     margin-bottom: 1rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+    }
 
     span {
       font-size: inherit;
@@ -83,13 +92,18 @@ html {
   }
 
   &__title {
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
     font-weight: 700;
     color: $red;
     font-family: $font-next;
     position: relative;
     margin-bottom: 2.5rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+    }
 
     &::after {
       content: "";
@@ -103,8 +117,15 @@ html {
   }
 
   &__text {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
     margin-top: auto;
     overflow: hidden;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+    }
   }
 
   &__btn {
@@ -129,11 +150,15 @@ html {
 .teacher-item {
   padding: 0.2rem;
   border-radius: 0.8rem;
-  height: 50.9rem;
+  height: 52rem;
   background: linear-gradient($red, $black);
 
   @include breakpoint($lb-bp) {
     height: 46.9rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    height: unset;
   }
 
   &__inner {
@@ -171,11 +196,26 @@ html {
   }
 
   &__title {
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
     font-weight: 700;
     font-family: $font-next;
     color: $red;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+    }
   }
 }
 

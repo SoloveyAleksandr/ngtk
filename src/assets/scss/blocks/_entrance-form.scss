@@ -1,10 +1,6 @@
 .entrance-form {
-  padding: 13.9rem 0;
+  padding: 7.9rem 0;
   background-color: $red;
-
-  @include breakpoint($xl-bp) {
-    padding: 8rem 0;
-  }
 
   &-container {
     padding: 3.9rem 0;
@@ -29,8 +25,8 @@
   &__title {
     font-family: $font-next;
     font-weight: 900;
-    font-size: 4rem;
-    line-height: 4.5rem;
+    font-size: 3.4rem;
+    line-height: 3.9rem;
     color: $white;
 
     @include breakpoint($sm-bp) {
@@ -40,6 +36,8 @@
   }
 
   &__text {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
     color: $white;
     max-width: 52rem;
 
