@@ -35,8 +35,8 @@
     h6 {
       font-family: $font-next;
       font-weight: 700;
-      font-size: 1.4rem;
-      line-height: 2rem;
+      // font-size: 1.8rem;
+      // line-height: 2.5rem;
     }
 
     a {
@@ -80,6 +80,8 @@
             right: 0;
             transform: translateY(-50%);
             color: rgba(161, 161, 161, 1);
+            font-size: inherit;
+            line-height: inherit;
           }
         }
       }

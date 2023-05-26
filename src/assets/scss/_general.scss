@@ -243,7 +243,7 @@ html {
 
 .page-info {
   // padding: 14rem 0rem 8rem;
-  padding: 4rem 0 8rem;
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -263,9 +263,14 @@ html {
 
     &__link {
       font-weight: 400;
-      font-size: 1.4rem;
-      line-height: 1.9rem;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
       color: rgb(162, 162, 162);
+
+      @include breakpoint($sm-bp) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+      }
 
       &::after {
         content: ">";
@@ -289,8 +294,8 @@ html {
 
   &__title {
     font-weight: 900;
-    font-size: 4rem;
-    line-height: 4.5rem;
+    font-size: 3.4rem;
+    line-height: 3.9rem;
     font-family: $font-next;
 
     @include breakpoint($sm-bp) {

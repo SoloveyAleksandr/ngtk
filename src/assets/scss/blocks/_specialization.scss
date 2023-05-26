@@ -25,20 +25,25 @@
         height: 100%;
         background-color: $white;
         border-radius: 0.8rem;
-        padding: 3.8rem;
+        padding: 1.8rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
       }
 
       &__title {
-        font-size: 1.4rem;
-        line-height: 2rem;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
         font-weight: 700;
         font-family: $font-next;
         color: $red;
         padding-bottom: 2rem;
         position: relative;
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
 
         &::after {
           content: "";
@@ -66,8 +71,13 @@
 
       &__text {
         font-weight: 400;
-        font-size: 1.4rem;
-        line-height: 1.9rem;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.4rem;
+          line-height: 1.9rem;
+        }
 
         &_grey {
           color: rgba(161, 161, 161, 1);
