@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="">
+  <title>DEFAULT</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.min.css"></head>
+
+<body>
+  <svg style="display: none;">
+  
+    <symbol id="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M21 21L15 15M17 10C17 11.3845 16.5895 12.7378 15.8203 13.889C15.0511 15.0401 13.9579 15.9373 12.6788 16.4672C11.3997 16.997 9.99224 17.1356 8.63437 16.8655C7.2765 16.5954 6.02922 15.9287 5.05026 14.9497C4.07129 13.9708 3.4046 12.7235 3.13451 11.3656C2.86441 10.0078 3.00303 8.6003 3.53285 7.32122C4.06266 6.04213 4.95987 4.94888 6.11101 4.17971C7.26216 3.41054 8.61553 3 10 3C11.8565 3 13.637 3.7375 14.9497 5.05025C16.2625 6.36301 17 8.14348 17 10Z"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  
+    <symbol id="eye-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 7V4C3 3.73478 3.10536 3.48043 3.29289 3.29289C3.48043 3.10536 3.73478 3 4 3H7" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <path d="M21 7V4C21 3.73478 20.8946 3.48043 20.7071 3.29289C20.5196 3.10536 20.2652 3 20 3H17"
+        stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3 17V20C3 20.2652 3.10536 20.5196 3.29289 20.7071C3.48043 20.8946 3.73478 21 4 21H7"
+        stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M21 17V20C21 20.2652 20.8946 20.5196 20.7071 20.7071C20.5196 20.8946 20.2652 21 20 21H17"
+        stroke-linecap="round" stroke-linejoin="round" />
+      <path
+        d="M19 12C19 12 15.87 16 12 16C8.13 16 5 12 5 12C5 12 8.13 8 12 8C15.87 8 19 12 19 12ZM12 10C11.6044 10 11.2178 10.1173 10.8889 10.3371C10.56 10.5568 10.3036 10.8692 10.1522 11.2346C10.0009 11.6001 9.96126 12.0022 10.0384 12.3902C10.1156 12.7781 10.3061 13.1345 10.5858 13.4142C10.8655 13.6939 11.2219 13.8844 11.6098 13.9616C11.9978 14.0387 12.3999 13.9991 12.7654 13.8478C13.1308 13.6964 13.4432 13.44 13.6629 13.1111C13.8827 12.7822 14 12.3956 14 12C14 11.4696 13.7893 10.9609 13.4142 10.5858C13.0391 10.2107 12.5304 10 12 10Z"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  
+    <symbol id="sign-in-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17 8C17 8.98891 16.7068 9.95561 16.1573 10.7779C15.6079 11.6001 14.827 12.241 13.9134 12.6194C12.9998 12.9978 11.9945 13.0969 11.0245 12.9039C10.0546 12.711 9.16373 12.2348 8.46447 11.5355C7.7652 10.8363 7.289 9.94536 7.09607 8.97545C6.90315 8.00555 7.00216 7.00021 7.3806 6.08658C7.75904 5.17295 8.3999 4.39206 9.22215 3.84265C10.0444 3.29324 11.0111 3 12 3C13.3261 3 14.5979 3.52678 15.5355 4.46447C16.4732 5.40215 17 6.67392 17 8ZM13 13H11C9.14348 13 7.36301 13.7375 6.05025 15.0503C4.7375 16.363 4 18.1435 4 20C4 20.2652 4.10536 20.5196 4.29289 20.7071C4.48043 20.8946 4.73478 21 5 21H19C19.2652 21 19.5196 20.8946 19.7071 20.7071C19.8946 20.5196 20 20.2652 20 20C20 18.1435 19.2625 16.363 17.9497 15.0503C16.637 13.7375 14.8565 13 13 13Z"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  
+    <symbol id="arrow-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 6L8 10L12 6" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+  
+    <symbol id="check-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 8.5L6.82512 11.4332C7.24458 12.1074 8.2446 12.0473 8.58036 11.3278L12 4" stroke-width="2"
+        stroke-linecap="round" />
+    </symbol>
+  
+    <symbol id="arrow-left-icon" viewBox="0 0 42 15" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.292893 6.79338C-0.0976311 7.18391 -0.0976311 7.81707 0.292893 8.2076L6.65685 14.5716C7.04738 14.9621 7.68054 14.9621 8.07107 14.5716C8.46159 14.181 8.46159 13.5479 8.07107 13.1573L2.41421 7.50049L8.07107 1.84363C8.46159 1.45311 8.46159 0.819945 8.07107 0.42942C7.68054 0.0388961 7.04738 0.0388961 6.65685 0.42942L0.292893 6.79338ZM41 8.50049C41.5523 8.50049 42 8.05277 42 7.50049C42 6.9482 41.5523 6.50049 41 6.50049V8.50049ZM1 8.50049H41V6.50049H1V8.50049Z" />
+    </symbol>
+  
+    <symbol id="arrow-right-icon" viewBox="0 0 42 15" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 6.50049C0.447715 6.50049 0 6.9482 0 7.50049C0 8.05277 0.447715 8.50049 1 8.50049V6.50049ZM41.7071 8.2076C42.0976 7.81707 42.0976 7.18391 41.7071 6.79338L35.3431 0.42942C34.9526 0.0388962 34.3195 0.0388962 33.9289 0.42942C33.5384 0.819945 33.5384 1.45311 33.9289 1.84363L39.5858 7.50049L33.9289 13.1573C33.5384 13.5479 33.5384 14.181 33.9289 14.5716C34.3195 14.9621 34.9526 14.9621 35.3431 14.5716L41.7071 8.2076ZM1 8.50049H41V6.50049H1V8.50049Z" />
+    </symbol>
+  
+    <symbol id="quoma-icon" viewBox="0 0 100 67" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M68.6845 0.000488281L49.709 67.0005H92.4331L100 0.000488281H68.6845ZM18.8591 0.000488281L0 67.0005H42.6077L50.291 0.000488281H18.8591Z" />
+    </symbol>
+  
+    <symbol id="menu-burger-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 6H20" stroke-linecap="round" />
+      <path d="M8 12H20" stroke-linecap="round" />
+      <path d="M4 18H20" stroke-linecap="round" />
+    </symbol>
+  
+    <symbol id="menu-close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 6L17.3137 17.3137" stroke-linecap="round" />
+      <path d="M6 17L17.3137 5.68629" stroke-linecap="round" />
+    </symbol>
+  
+    <symbol id="up-arrow-icon" viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M10.5 32C10.5 32.8284 11.1716 33.5 12 33.5C12.8284 33.5 13.5 32.8284 13.5 32H10.5ZM13.0607 0.93934C12.4749 0.353553 11.5251 0.353553 10.9393 0.93934L1.3934 10.4853C0.807611 11.0711 0.807611 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.93934ZM13.5 32V2H10.5V32H13.5Z" />
+    </symbol>
+  
+  </svg>
+  <div class="page" id="page-top">
+
+    <header class="header">
+      <div class="container header-container">
+    
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo-color.svg" alt="logo">
+        </a>
+    
+        <div class="header-box">
+          <p class="header-box__title">
+            Свидетельство:
+            <span class="header-box__info">№ Л035-01281-52/00212306 от 09.10.2015</span>
+          </p>
+    
+          <p class="header-box__title">
+            Лицензия:
+            <span class="header-box__info">52А01 № 0002281 РЕГ. № 2656 от 11.05.2016</span>
+          </p>
+        </div>
+    
+        <div class="header-box">
+          <p class="header-box__title">Приемная комиссия:</p>
+    
+          <div class="header-box__links">
+            <a href="tel:+78314163061" class="header-box__link">+7 (831) 416-30-61</a>
+    
+            <a href="tel:+78314177122" class="header-box__link">+7 (831) 417-71-22</a>
+          </div>
+        </div>
+    
+        <div class="header-box">
+          <a href="#" class="header-box__info">Министерство образования и науки <br> Нижегородской области</a>
+        </div>
+    
+        <div class="header-controls">
+          <button type="button" class="header-controls__btn">
+            <svg>
+              <use href="#search-icon"></use>
+            </svg>
+          </button>
+    
+          <button type="button" class="header-controls__btn">
+            <svg>
+              <use href="#eye-icon"></use>
+            </svg>
+          </button>
+    
+          <button type="button" class="header-controls__btn header-controls__btn_login">
+            <svg>
+              <use href="#sign-in-icon"></use>
+            </svg>
+    
+            Личная студия
+          </button>
+    
+          <button type="button" class="header-controls__btn header-controls__btn_menu">
+            <svg>
+              <use href="#menu-burger-icon"></use>
+            </svg>
+    
+            <svg>
+              <use href="#menu-close-icon"></use>
+            </svg>
+          </button>
+        </div>
+    
+      </div>
+    
+      <div class="header-menu">
+        <nav class="header-nav">
+          <div class="container header-nav-container">
+            <a href="#" class="header-nav__link">
+              Сведения об образовательной организации
+            </a>
+            <div class="header-nav-dropdown">
+              <a href="#" class="header-nav-dropdown__btn header-nav__link">
+                Специальности
+                <svg>
+                  <use href="#arrow-icon"></use>
+                </svg>
+              </a>
+    
+              <div class="header-nav-dropdown__content">
+                <a href="#" class="header-nav__link">Прикладная информатика (по отраслям)</a>
+                <a href="#" class="header-nav__link">Экономика и бухгалтерский учет (по отраслям)</a>
+                <a href="#" class="header-nav__link">Операционная деятельность в логистике</a>
+                <a href="#" class="header-nav__link">землеустройство</a>
+                <a href="#" class="header-nav__link">геология и разведка нефтяных и газовых месторождений</a>
+                <a href="#" class="header-nav__link">право и организация социального обеспечения</a>
+                <a href="#" class="header-nav__link">правоохранительная деятельность</a>
+                <a href="#" class="header-nav__link">техническое обслуживание и ремонт автомобильного транспорта</a>
+                <a href="#" class="header-nav__link">дошкольное образование</a>
+              </div>
+            </div>
+            <a href="#" class="header-nav__link">
+              Абитуриентам
+            </a>
+            <a href="#" class="header-nav__link">
+              ССК
+            </a>
+            <div class="header-nav-dropdown">
+              <a href="#" class="header-nav-dropdown__btn header-nav__link">
+                Курсы
+                <svg>
+                  <use href="#arrow-icon"></use>
+                </svg>
+              </a>
+              <div class="header-nav-dropdown__content">
+                <a href="#" class="header-nav__link">Повышение квалификации охранников 4 разряда</a>
+                <a href="#" class="header-nav__link">Профессиональная подготовка охранников 4 разряда</a>
+              </div>
+            </div>
+            <a href="#" class="header-nav__link">
+              Новости
+            </a>
+            <a href="#" class="header-nav__link">
+              Контакты
+            </a>
+          </div>
+        </nav>
+    
+        <div class="header-menu-nav">
+    
+        </div>
+      </div>
+    </header>
+    <section class="club">
+      <div class="container">
+    
+        <div class="page-info">
+          <div class="page-info-nav">
+            <a href="#" class="page-info-nav__link">
+              Главная
+            </a>
+            <a href="#" class="page-info-nav__link">
+              Студенческий спортивный клуб “Геракл”
+            </a>
+          </div>
+    
+          <h1 class="page-info__title">
+            Студенческий спортивный клуб “Геракл”
+          </h1>
+        </div>
+    
+        <div class="club-info">
+          <div class="doc-info">
+            <div class="doc-info__content">
+              <div class="doc-info-item">
+                <p>
+                  В соотвествии с перечнем поручений Президента Российской Федерации по итогам заседания при Президенте
+                  Российской Федерации по развитию физической культуры и спорта от 22 ноября 2019 года (пункт 1 подпункту
+                  «Б», часть 3) с 31 октября 2022 в Нижегородском гуманитарно-техническом колледже создано структурное
+                  подразделение Студенческий спортивный клуб «Геракл»
+                </p>
+              </div>
+              <div class="doc-info-item">
+                <ul>
+                  <li data-doc-type=".pdf">
+                    <a href="#">
+                      Выписка из реестра лицензий на осуществление образовательной деятельности ЧПОУ «НГТК»
+                    </a>
+                  </li>
+                  <li data-doc-type=".pdf">
+                    <a href="#">
+                      Приказ № 58К от 31.10.2022 О создании Студенческого спортивного клуба
+                    </a>
+                  </li>
+                  <li data-doc-type=".pdf">
+                    <a href="#">
+                      Положение о студенческом спортивном клубе от 31.10.2022
+                    </a>
+                  </li>
+                  <li data-doc-type=".pdf">
+                    <a href="#">
+                      План работы студенческого спортивного клуба «Геракл» на 2022-2023 учебный год
+                    </a>
+                  </li>
+                  <li data-doc-type=".pdf">
+                    <a href="#">
+                      Календарный план физкультурно-оздоровительных и культурно-массовых мероприятий студенческого
+                      спортивного клуба «Геракл» на 2022-2023 учебный год
+                    </a>
+                  </li>
+                  <li data-doc-type=".pdf">
+                    <a href="#">
+                      Расписание учебных занятий спортивного студенческого клуба «Геракл» ЧПОУ НГТК на 2022-2023 учебный год
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <div class="club-info-img">
+            <a href="./assets/images/club-1.jpg" class="club-info-img__img" data-fancybox>
+              <img src="./assets/images/club-1.jpg" alt="club">
+            </a>
+          </div>
+        </div>
+    
+        <div class="main-news">
+          <h4 class="main-news__title">Другие новости</h4>
+    
+          <ul class="main-news-list">
+            <li class="main-news-list-item">
+              <div class="main-news-list-item__inner">
+                <div class="main-news-list-item__img">
+                  <img src="./assets/images/news-1.jpg" alt="main-news">
+                </div>
+    
+                <span class="main-news-list-item__date">22 марта 2023</span>
+    
+                <h5 class="main-news-list-item__title">Встреча с представителями военного университета</h5>
+    
+                <p class="main-news-list-item__text">
+                  Сегодня 22 марта 2023 года в стенах Нижегородского гуманитарно-технического колледжа прошла встреча с
+                  представител...
+                </p>
+    
+                <a href="#" class="main-news-list-item__btn">
+                  Читать далее
+                </a>
+              </div>
+            </li>
+    
+            <li class="main-news-list-item">
+              <div class="main-news-list-item__inner">
+                <div class="main-news-list-item__img">
+                  <img src="./assets/images/news-2.jpg" alt="main-news">
+                </div>
+    
+                <span class="main-news-list-item__date">8 марта 2023</span>
+    
+                <h5 class="main-news-list-item__title">Поздравляем с Международным женским днем!</h5>
+    
+                <p class="main-news-list-item__text">
+                  Дорогие девушки! Хотим поздравить вас с этим замечательным праздником. Желаем вам, чтобы вы были любимы...
+                </p>
+    
+                <a href="#" class="main-news-list-item__btn">
+                  Читать далее
+                </a>
+              </div>
+            </li>
+    
+            <li class="main-news-list-item">
+              <div class="main-news-list-item__inner">
+                <div class="main-news-list-item__img">
+                  <img src="./assets/images/news-3.jpg" alt="main-news">
+                </div>
+    
+                <span class="main-news-list-item__date">7 марта 2023</span>
+    
+                <h5 class="main-news-list-item__title">Вручение почетных грамот и&nbsp;благодарственных писем
+                  от&nbsp;Министерства!
+                </h5>
+    
+                <p class="main-news-list-item__text">
+                  Поздравляем преподавателя экономики НГТК Ражева Андрея Александровича с&nbsp;получением почетной грамоты
+                  от
+                  Минист...
+                </p>
+    
+                <a href="#" class="main-news-list-item__btn">
+                  Читать далее
+                </a>
+              </div>
+            </li>
+    
+            <li class="main-news-list-item">
+              <div class="main-news-list-item__inner">
+                <div class="main-news-list-item__img">
+                  <img src="./assets/images/news-4.jpg" alt="main-news">
+                </div>
+    
+                <span class="main-news-list-item__date">2 марта 2023</span>
+    
+                <h5 class="main-news-list-item__title">Состоялось награждение правозащитников Нижегородской области</h5>
+    
+                <p class="main-news-list-item__text">
+                  Первого марта заседание Комиссии по&nbsp;правам человека, содействию развитию институтов гражданского
+                  общества...
+                </p>
+    
+                <a href="#" class="main-news-list-item__btn">
+                  Читать далее
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-main">
+          <div class="footer-inner">
+            <a href="#" class="footer-logo">
+              <img src="./assets/images/logo-white.svg" alt="logo">
+    
+              <span class="footer-logo__text">
+                Автономная некоммерческая организация профессионального образования Нижегородский гуманитарно-технический
+                колледж (АНО ПО нгтк)
+              </span>
+            </a>
+    
+            <div class="footer-nav">
+              <div class="footer-nav-list">
+                <a href="#" class="footer-nav-list__link">О колледже</a>
+                <a href="#" class="footer-nav-list__link">Специальности</a>
+                <a href="#" class="footer-nav-list__link">Абитуриентам</a>
+              </div>
+    
+              <div class="footer-nav-list">
+                <a href="#" class="footer-nav-list__link">Курсы</a>
+                <a href="#" class="footer-nav-list__link">Спортивный студенческий клуб</a>
+                <a href="#" class="footer-nav-list__link">Новости</a>
+              </div>
+    
+              <div class="footer-nav-list">
+                <a href="#" class="footer-nav-list__link">FAQ</a>
+                <a href="#" class="footer-nav-list__link">Контакты</a>
+              </div>
+    
+              <div class="footer-nav-list">
+                <a href="#" class="footer-nav-list__link footer-nav-list__link_dekor">Министерство науки и высшего
+                  образования</a>
+                <a href="#" class="footer-nav-list__link footer-nav-list__link_dekor">Министерство просвещения</a>
+                <a href="#" class="footer-nav-list__link footer-nav-list__link_dekor">Информация по противодействию
+                  коррупции</a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="footer-contacts">
+            <a href="tel:+78314163061" class="footer-contacts__link">+7 (831) 416-30-61</a>
+            <a href="tel:+78314177122" class="footer-contacts__link">+7 (831) 417-71-22 (факс)</a>
+            <p class="footer-contacts__text">
+              603122, г. Нижний Новгород,ул. Ванеева, д. 205
+            </p>
+            <p class="footer-contacts__text">chpoungtk@mail.ru</p>
+          </div>
+        </div>
+    
+        <div class="footer-legal">
+          <p class="footer-legal__text">
+            © ЧПОУ Нижегородский гуманитарно-технический колледж (НГТК), 2016-2023
+          </p>
+    
+          <div class="footer-legal__box">
+            <p class="footer-legal__text">
+              Указанные на сайте цены не являются публичной офертой
+            </p>
+    
+            <a href="#" class="footer-legal__text">
+              Политика конфиденциальности
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a href="#page-top" type="button" class="up-btn">
+      <svg>
+        <use href="#up-arrow-icon"></use>
+      </svg>
+      Наверх
+    </a>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script> -->
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
