@@ -2112,6 +2112,9 @@ svg {
     line-height: 2rem;
   }
 }
+.doc-table {
+  width: 100%;
+}
 @media (max-width: 1024px) {
   .doc-table {
     width: 100%;
@@ -2119,62 +2122,184 @@ svg {
     overflow: auto;
   }
 }
+.doc-table__inner {
+  width: 100%;
+}
 @media (max-width: 1024px) {
-  .doc-table__container {
+  .doc-table__inner {
     width: 108rem;
   }
 }
-.doc-structural-head {
+.doc-table table:not(.doc-table__inner) {
+  width: 100%;
+}
+.doc-table table:not(.doc-table__inner) tr {
+  display: -ms-flexbox;
+  display: flex;
+}
+.doc-table table:not(.doc-table__inner) tr th,
+.doc-table table:not(.doc-table__inner) tr td {
+  -ms-flex: 1;
+      flex: 1;
+}
+.doc-table thead {
   border-top: 0.2rem solid rgb(43, 42, 41);
   border-bottom: 0.2rem solid rgb(43, 42, 41);
 }
-.doc-structural-head__title {
-  font-weight: 700 !important;
+.doc-table thead th {
+  text-align: left;
+  font-weight: 700;
   font-size: 1.8rem;
   line-height: 2.5rem;
 }
 @media (max-width: 500px) {
-  .doc-structural-head__title {
+  .doc-table thead th {
     font-size: 1.4rem;
     line-height: 1.9rem;
   }
 }
-.doc-structural-item {
-  display: grid;
-  grid-template-columns: 16rem 16rem 16rem 24rem 10rem 16rem auto;
-  padding: 2rem 0;
+.doc-table thead table tr {
+  border: none;
 }
-.doc-structural-item:not(.doc-structural-head) {
+.doc-table thead table th {
+  padding: 1rem 0rem 0rem;
+}
+.doc-table thead table th:not(:last-child) {
+  padding-right: 1rem;
+}
+.doc-table thead table th:not(:first-child) {
+  padding-left: 1rem;
+}
+.doc-table tr {
+  width: 100%;
+}
+.doc-table th,
+.doc-table td {
+  padding: 3rem 1rem;
+  vertical-align: top;
+}
+.doc-table tbody tr {
   border-bottom: 0.2rem solid rgb(161, 161, 161);
 }
-.doc-structural-item__inner {
-  padding: 1rem;
+.doc-table tbody table tr {
+  border: none;
 }
-.doc-structural-item__text {
+.doc-table tbody table td {
+  padding: 0rem;
+}
+.doc-table tbody table td:not(:last-child) {
+  padding-right: 1rem;
+}
+.doc-table tbody table td:not(:first-child) {
+  padding-left: 1rem;
+}
+.doc-table tbody td {
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 2.5rem;
 }
-@media (max-width: 500px) {
-  .doc-structural-item__text {
-    font-size: 1.4rem;
-    line-height: 1.9rem;
-  }
-}
-.doc-structural-item__text >,
-.doc-structural-item__text * > {
+.doc-table tbody td >,
+.doc-table tbody td * > {
   font-size: inherit;
-  font-weight: inherit;
   line-height: inherit;
   font-family: inherit;
   color: inherit;
 }
-.doc-structural-item__text > a,
-.doc-structural-item__text * > a {
-  text-decoration: underline;
+.doc-table tbody td > *,
+.doc-table tbody td * > * {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.doc-table tbody td > * :not(strong),
+.doc-table tbody td * > * :not(strong) {
+  font-weight: inherit;
+}
+.doc-table tbody td > :not(strong),
+.doc-table tbody td * > :not(strong) {
+  font-weight: inherit;
+}
+.doc-table tbody td > h1,
+.doc-table tbody td > h2,
+.doc-table tbody td > h3,
+.doc-table tbody td > h4,
+.doc-table tbody td > h5,
+.doc-table tbody td > h6,
+.doc-table tbody td * > h1,
+.doc-table tbody td * > h2,
+.doc-table tbody td * > h3,
+.doc-table tbody td * > h4,
+.doc-table tbody td * > h5,
+.doc-table tbody td * > h6 {
+  font-family: "Next Art";
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+.doc-table tbody td > a,
+.doc-table tbody td * > a {
+  transition: 0.3s;
+}
+.doc-table tbody td > a:hover,
+.doc-table tbody td * > a:hover {
+  opacity: 0.5;
+}
+.doc-table tbody td > ul,
+.doc-table tbody td * > ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  gap: 0.5em;
+}
+.doc-table tbody td > ul li,
+.doc-table tbody td * > ul li {
+  padding-left: 1.3em;
+  position: relative;
+}
+.doc-table tbody td > ul li::before,
+.doc-table tbody td * > ul li::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: rgb(191, 39, 47);
+  position: absolute;
+  top: 50%;
+  left: 0.2em;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.doc-table tbody td > ul li[data-doc-type],
+.doc-table tbody td * > ul li[data-doc-type] {
+  padding-right: 5rem;
+}
+.doc-table tbody td > ul li[data-doc-type]::after,
+.doc-table tbody td * > ul li[data-doc-type]::after {
+  content: attr(data-doc-type);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: rgb(161, 161, 161);
+}
+.doc-table tbody td > strong,
+.doc-table tbody td * > strong {
+  font-weight: 700;
+}
+@media (max-width: 500px) {
+  .doc-table tbody td {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
+}
+.doc-table tbody td a {
   color: rgb(191, 39, 47);
 }
-.doc-structural__comment {
+.doc-table__info {
+  display: inline-block;
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 2.5rem;
@@ -2182,10 +2307,19 @@ svg {
   margin-top: 2rem;
 }
 @media (max-width: 500px) {
-  .doc-structural__comment {
+  .doc-table__info {
     font-size: 1.4rem;
     line-height: 1.9rem;
   }
+}
+.doc-table_3 thead th {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+}
+.doc-table_3 tbody td {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
 }
 .doc-size-head {
   border-top: 0.2rem solid rgb(43, 42, 41);

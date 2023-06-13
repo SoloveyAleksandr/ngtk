@@ -211,52 +211,57 @@
     }
   }
 
+  // &-table {
+  //   @include breakpoint($xl-bp) {
+  //     width: 100%;
+  //     padding-bottom: 2rem;
+  //     overflow: auto;
+  //   }
+
+  //   &__container {
+  //     @include breakpoint($xl-bp) {
+  //       width: 108rem;
+  //     }
+  //   }
+  // }
+
   &-table {
+    width: 100%;
+
     @include breakpoint($xl-bp) {
       width: 100%;
       padding-bottom: 2rem;
       overflow: auto;
     }
 
-    &__container {
+    &__inner {
+      width: 100%;
+
       @include breakpoint($xl-bp) {
         width: 108rem;
       }
     }
-  }
 
-  &-structural {
-    &-head {
-      border-top: 0.2rem solid $black;
-      border-bottom: 0.2rem solid $black;
+    table:not(.doc-table__inner) {
+      width: 100%;
 
-      &__title {
-        font-weight: 700 !important;
-        font-size: 1.8rem;
-        line-height: 2.5rem;
+      tr {
+        display: flex;
 
-        @include breakpoint($sm-bp) {
-          font-size: 1.4rem;
-          line-height: 1.9rem;
+        th,
+        td {
+          flex: 1;
         }
       }
     }
 
-    &-item {
-      display: grid;
-      grid-template-columns: 16rem 16rem 16rem 24rem 10rem 16rem auto;
-      padding: 2rem 0;
+    thead {
+      border-top: 0.2rem solid $black;
+      border-bottom: 0.2rem solid $black;
 
-      &:not(.doc-structural-head) {
-        border-bottom: 0.2rem solid rgba(161, 161, 161, 1);
-      }
-
-      &__inner {
-        padding: 1rem;
-      }
-
-      &__text {
-        font-weight: 400;
+      th {
+        text-align: left;
+        font-weight: 700;
         font-size: 1.8rem;
         line-height: 2.5rem;
 
@@ -264,24 +269,79 @@
           font-size: 1.4rem;
           line-height: 1.9rem;
         }
+      }
 
-        & >,
-        * > {
-          font-size: inherit;
-          font-weight: inherit;
-          line-height: inherit;
-          font-family: inherit;
-          color: inherit;
+      table {
+        tr {
+          border: none;
+        }
 
-          a {
-            text-decoration: underline;
-            color: $red;
+        th {
+          padding: 1rem 0rem 0rem;
+
+          &:not(:last-child) {
+            padding-right: 1rem;
+          }
+
+          &:not(:first-child) {
+            padding-left: 1rem;
           }
         }
       }
     }
 
-    &__comment {
+    tr {
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 3rem 1rem;
+      vertical-align: top;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 0.2rem solid rgba(161, 161, 161, 1);
+      }
+
+      table {
+        tr {
+          border: none;
+        }
+
+        td {
+          padding: 0rem;
+
+          &:not(:last-child) {
+            padding-right: 1rem;
+          }
+
+          &:not(:first-child) {
+            padding-left: 1rem;
+          }
+        }
+      }
+
+      td {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        @include text;
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.4rem;
+          line-height: 1.9rem;
+        }
+
+        a {
+          color: $red;
+        }
+      }
+    }
+
+    &__info {
+      display: inline-block;
       font-weight: 400;
       font-size: 1.8rem;
       line-height: 2.5rem;
@@ -291,6 +351,23 @@
       @include breakpoint($sm-bp) {
         font-size: 1.4rem;
         line-height: 1.9rem;
+      }
+    }
+
+    &_3 {
+      thead {
+        th {
+          font-weight: 700;
+          font-size: 1.4rem;
+          line-height: 1.9rem;
+        }
+      }
+
+      tbody {
+        td {
+          font-size: 1.4rem;
+          line-height: 1.9rem;
+        }
       }
     }
   }
