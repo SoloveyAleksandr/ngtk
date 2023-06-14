@@ -237,7 +237,68 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }]);
     return UpBtn;
-  }(); // dropwodn в шапке
+  }();
+  var HeaderSearch = /*#__PURE__*/function () {
+    function HeaderSearch(container) {
+      _classCallCheck(this, HeaderSearch);
+      this.container = container;
+      this.openBtn = this.container.querySelector(".header-search__btn_open");
+      this.searchBtn = this.container.querySelector(".header-search__btn_search");
+      this.inner = this.container.querySelector(".header-search__inner");
+      if (this.container && this.openBtn && this.searchBtn && this.inner) {
+        this.init();
+      }
+    }
+    _createClass(HeaderSearch, [{
+      key: "init",
+      value: function init() {
+        var _this2 = this;
+        this.openBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          _this2.open.call(_this2);
+        });
+        this.inner.addEventListener("click", function (e) {
+          return e.stopPropagation();
+        });
+        document.addEventListener("click", this.close.bind(this));
+      }
+    }, {
+      key: "open",
+      value: function open() {
+        this.container.classList.add("_active");
+      }
+    }, {
+      key: "close",
+      value: function close() {
+        this.container.classList.remove("_active");
+      }
+    }]);
+    return HeaderSearch;
+  }();
+  {
+    var formBtns = document.querySelectorAll("[data-to-form]");
+    var form = document.querySelector(".entrance-form");
+    var _header = document.querySelector(".header");
+    if (form) {
+      formBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var hh = _header.offsetHeight;
+          var formY = form.getBoundingClientRect().y;
+          var winY = window.scrollY;
+          window.scrollTo({
+            behavior: "smooth",
+            top: winY > formY ? winY - (Math.abs(formY) + hh) : winY + (formY - hh)
+          });
+        });
+      });
+    }
+  }
+  var headerSearch = document.querySelector(".header-search");
+  if (headerSearch) {
+    new HeaderSearch(headerSearch);
+  }
+
+  // dropwodn в шапке
   var headerDrops = document.querySelectorAll(".header-nav-dropdown");
   headerDrops.forEach(function (item) {
     return new HeaderDrop(item);

@@ -121,11 +121,21 @@
         </div>
     
         <div class="header-controls">
-          <button type="button" class="header-controls__btn">
-            <svg>
-              <use href="#search-icon"></use>
-            </svg>
-          </button>
+          <div class="header-search">
+            <button type="button" class="header-search__btn header-search__btn_open header-controls__btn">
+              <svg>
+                <use href="#search-icon"></use>
+              </svg>
+            </button>
+            <div class="header-search__inner">
+              <input type="text" class="header-search__input">
+              <button type="button" class="header-search__btn header-search__btn_search header-controls__btn">
+                <svg>
+                  <use href="#search-icon"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
     
           <button type="button" class="header-controls__btn">
             <svg>

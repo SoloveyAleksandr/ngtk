@@ -214,6 +214,63 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class HeaderSearch {
+    constructor(container) {
+      this.container = container;
+      this.openBtn = this.container.querySelector(".header-search__btn_open");
+      this.searchBtn = this.container.querySelector(".header-search__btn_search");
+      this.inner = this.container.querySelector(".header-search__inner");
+
+      if (this.container && this.openBtn && this.searchBtn && this.inner) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.openBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.open.call(this);
+      });
+      this.inner.addEventListener("click", (e) => e.stopPropagation());
+      document.addEventListener("click", this.close.bind(this));
+    }
+
+    open() {
+      this.container.classList.add("_active");
+    }
+
+    close() {
+      this.container.classList.remove("_active");
+    }
+  }
+
+  {
+    const formBtns = document.querySelectorAll("[data-to-form]");
+    const form = document.querySelector(".entrance-form");
+    const header = document.querySelector(".header");
+
+    if (form) {
+      formBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const hh = header.offsetHeight;
+          const formY = form.getBoundingClientRect().y;
+
+          const winY = window.scrollY;
+
+          window.scrollTo({
+            behavior: "smooth",
+            top: winY > formY ? winY - (Math.abs(formY) + hh) : winY + (formY - hh),
+          });
+        })
+      })
+    }
+  }
+
+  const headerSearch = document.querySelector(".header-search");
+  if (headerSearch) {
+    new HeaderSearch(headerSearch);
+  }
+
   // dropwodn в шапке
   const headerDrops = document.querySelectorAll(".header-nav-dropdown");
   headerDrops.forEach(item => new HeaderDrop(item));
