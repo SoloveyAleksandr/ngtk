@@ -4,6 +4,15 @@
   left: 0;
   background-color: $white;
   z-index: 5000;
+  transition: 0.5s;
+
+  &._active {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+  }
+
+  &._hidden {
+    transform: translateY(-100%);
+  }
 
   &-container {
     display: flex;

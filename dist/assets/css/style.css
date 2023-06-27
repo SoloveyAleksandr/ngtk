@@ -948,6 +948,16 @@ svg {
     left: 0;
     background-color: rgb(255, 255, 255);
     z-index: 5000;
+    transition: 0.5s;
+}
+
+.header._active {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+}
+
+.header._hidden {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .header-container {

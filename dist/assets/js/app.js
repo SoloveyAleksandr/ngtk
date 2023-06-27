@@ -204,6 +204,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }]);
     return HeaderMenu;
   }();
+  var Header = /*#__PURE__*/function () {
+    function Header(header) {
+      _classCallCheck(this, Header);
+      this.header = header;
+      this.prevPos = 0;
+      if (this.header) {
+        this.init();
+      }
+    }
+    _createClass(Header, [{
+      key: "init",
+      value: function init() {
+        var _this2 = this;
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 200) {
+            _this2.header.classList.add("_active");
+            if (_this2.prevPos > window.scrollY) {
+              _this2.show();
+            } else {
+              _this2.hide();
+            }
+          } else {
+            _this2.header.classList.remove("_active");
+          }
+          _this2.prevPos = window.scrollY;
+        });
+      }
+    }, {
+      key: "hide",
+      value: function hide() {
+        if (!this.header.classList.contains("_open")) {
+          this.header.classList.add("_hidden");
+        }
+      }
+    }, {
+      key: "show",
+      value: function show() {
+        this.header.classList.remove("_hidden");
+      }
+    }]);
+    return Header;
+  }();
   var UpBtn = /*#__PURE__*/function () {
     function UpBtn(btn) {
       _classCallCheck(this, UpBtn);
@@ -255,10 +297,10 @@ document.addEventListener("DOMContentLoaded", function () {
     _createClass(HeaderSearch, [{
       key: "init",
       value: function init() {
-        var _this2 = this;
+        var _this3 = this;
         this.openBtn.addEventListener("click", function (e) {
           e.stopPropagation();
-          _this2.open.call(_this2);
+          _this3.open.call(_this3);
         });
         this.inner.addEventListener("click", function (e) {
           return e.stopPropagation();
@@ -309,19 +351,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // меню
   var header = document.querySelector(".header");
-  if (header && window.matchMedia("(max-width: 1024px)").matches) {
-    var headerMenu = header.querySelector(".header-menu");
-    var headerMenuBtn = header.querySelector(".header-controls__btn_menu");
-    var headerMenuNav = header.querySelector(".header-menu-nav");
-    var navFragment = document.createDocumentFragment();
-    var headerLoginBtn = header.querySelector(".header-controls__btn_login");
-    navFragment.appendChild(headerLoginBtn);
-    var headerNavBoxList = header.querySelectorAll(".header-box");
-    headerNavBoxList.forEach(function (item) {
-      navFragment.appendChild(item);
-    });
-    headerMenuNav.appendChild(navFragment);
-    var MENU = new HeaderMenu(header, headerMenu, headerMenuBtn);
+  if (header) {
+    new Header(header);
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      var headerMenu = header.querySelector(".header-menu");
+      var headerMenuBtn = header.querySelector(".header-controls__btn_menu");
+      var headerMenuNav = header.querySelector(".header-menu-nav");
+      var navFragment = document.createDocumentFragment();
+      var headerLoginBtn = header.querySelector(".header-controls__btn_login");
+      navFragment.appendChild(headerLoginBtn);
+      var headerNavBoxList = header.querySelectorAll(".header-box");
+      headerNavBoxList.forEach(function (item) {
+        navFragment.appendChild(item);
+      });
+      headerMenuNav.appendChild(navFragment);
+      var MENU = new HeaderMenu(header, headerMenu, headerMenuBtn);
+    }
   }
 
   // footer adaptive

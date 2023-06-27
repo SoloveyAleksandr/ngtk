@@ -181,6 +181,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class Header {
+    constructor(header) {
+      this.header = header;
+      this.prevPos = 0;
+      if (this.header) {
+        this.init();
+      }
+    }
+
+    init() {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          this.header.classList.add("_active");
+          if (this.prevPos > window.scrollY) {
+            this.show();
+          } else {
+            this.hide();
+          }
+        } else {
+          this.header.classList.remove("_active");
+        }
+        this.prevPos = window.scrollY;
+      })
+    }
+
+    hide() {
+      if (!this.header.classList.contains("_open")) {
+        this.header.classList.add("_hidden");
+      }
+    }
+
+    show() {
+      this.header.classList.remove("_hidden");
+    }
+  }
+
   class UpBtn {
     constructor(btn) {
       this.btn = btn;
@@ -277,24 +313,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // меню
   const header = document.querySelector(".header");
-  if (header && window.matchMedia("(max-width: 1024px)").matches) {
-    const headerMenu = header.querySelector(".header-menu");
-    const headerMenuBtn = header.querySelector(".header-controls__btn_menu");
-    const headerMenuNav = header.querySelector(".header-menu-nav");
+  if (header) {
 
-    const navFragment = document.createDocumentFragment();
+    new Header(header);
 
-    const headerLoginBtn = header.querySelector(".header-controls__btn_login");
-    navFragment.appendChild(headerLoginBtn);
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      const headerMenu = header.querySelector(".header-menu");
+      const headerMenuBtn = header.querySelector(".header-controls__btn_menu");
+      const headerMenuNav = header.querySelector(".header-menu-nav");
 
-    const headerNavBoxList = header.querySelectorAll(".header-box");
-    headerNavBoxList.forEach(item => {
-      navFragment.appendChild(item);
-    });
+      const navFragment = document.createDocumentFragment();
 
-    headerMenuNav.appendChild(navFragment);
+      const headerLoginBtn = header.querySelector(".header-controls__btn_login");
+      navFragment.appendChild(headerLoginBtn);
 
-    const MENU = new HeaderMenu(header, headerMenu, headerMenuBtn);
+      const headerNavBoxList = header.querySelectorAll(".header-box");
+      headerNavBoxList.forEach(item => {
+        navFragment.appendChild(item);
+      });
+
+      headerMenuNav.appendChild(navFragment);
+
+      const MENU = new HeaderMenu(header, headerMenu, headerMenuBtn);
+    }
   }
 
   // footer adaptive
