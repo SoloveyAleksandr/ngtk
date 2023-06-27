@@ -1604,6 +1604,10 @@ svg {
     color: rgb(161, 161, 161);
 }
 
+.footer-legal__text * {
+    color: inherit;
+}
+
 .footer-legal__box {
     display: -ms-flexbox;
     display: flex;

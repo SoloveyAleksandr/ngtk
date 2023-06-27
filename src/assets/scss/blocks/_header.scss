@@ -5,18 +5,6 @@
   background-color: $white;
   z-index: 5000;
 
-  // @include breakpoint($xl-bp) {
-  //   position: relative;
-
-  //   &._open {
-  //     position: fixed;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     z-index: 1000;
-  //   }
-  // }
-
   &-container {
     display: flex;
     align-items: center;

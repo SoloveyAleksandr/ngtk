@@ -184,6 +184,10 @@
 
     &__text {
       color: $grey;
+
+      * {
+        color: inherit;
+      }
     }
 
     &__box {

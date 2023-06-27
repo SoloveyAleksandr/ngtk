@@ -377,4 +377,18 @@ document.addEventListener("DOMContentLoaded", () => {
     new UpBtn(upBtn);
   }
 
+  const footerYear = document.querySelector("#footer-current-year");
+  if (footerYear) {
+    (async () => {
+      fetch("http://worldtimeapi.org/api/ip")
+        .then(response => response.json())
+        .then(data => {
+          footerYear.innerText = new Date(data.datetime).getFullYear()
+        })
+        .catch(() => {
+          footerYear.innerText = new Date().getFullYear();
+        });
+    })();
+  }
+
 })
