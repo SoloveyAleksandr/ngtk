@@ -3,6 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
     // Your custom options
   });
 
+  class Legal {
+    constructor(container) {
+      this.container = container;
+      this.bg = this.container.querySelector(".legal__bg");
+      this.btn = this.container.querySelector(".legal__btn");
+
+      if (this.container && this.bg && this.btn) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.bg.addEventListener("click", this.close.bind(this));
+      this.btn.addEventListener("click", this.close.bind(this));
+    }
+
+    open() {
+      this.container.classList.add("_active");
+    }
+
+    close() {
+      this.container.classList.remove("_active");
+    }
+  }
+
   const startWindowSize = window.innerWidth;
   const breackpoint = 1024;
   const isDescktop = startWindowSize > breackpoint;
@@ -430,6 +455,19 @@ document.addEventListener("DOMContentLoaded", () => {
           footerYear.innerText = new Date().getFullYear();
         });
     })();
+  }
+
+  const legalContainer = document.querySelector(".legal");
+  if (legalContainer) {
+    const legal = new Legal(legalContainer);
+
+    const btns = document.querySelectorAll("[data-legal]");
+    btns.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        legal.open();
+      });
+    });
   }
 
 })

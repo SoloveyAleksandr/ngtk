@@ -242,18 +242,18 @@
       }
     }
 
-    table:not(.doc-table__inner) {
-      width: 100%;
+    // table:not(.doc-table__inner) {
+    //   width: 100%;
 
-      tr {
-        display: flex;
+    //   tr {
+    //     display: flex;
 
-        th,
-        td {
-          flex: 1;
-        }
-      }
-    }
+    //     th,
+    //     td {
+    //       flex: 1;
+    //     }
+    //   }
+    // }
 
     thead {
       border-top: 0.2rem solid $black;
@@ -271,23 +271,23 @@
         }
       }
 
-      table {
-        tr {
-          border: none;
-        }
+      // table {
+      //   tr {
+      //     border: none;
+      //   }
 
-        th {
-          padding: 1rem 0rem 0rem;
+      //   th {
+      //     padding: 1rem 0rem 0rem;
 
-          &:not(:last-child) {
-            padding-right: 1rem;
-          }
+      //     &:not(:last-child) {
+      //       padding-right: 1rem;
+      //     }
 
-          &:not(:first-child) {
-            padding-left: 1rem;
-          }
-        }
-      }
+      //     &:not(:first-child) {
+      //       padding-left: 1rem;
+      //     }
+      //   }
+      // }
     }
 
     tr {
