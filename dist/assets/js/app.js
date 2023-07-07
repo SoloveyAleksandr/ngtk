@@ -42,6 +42,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }]);
     return Legal;
   }();
+  var ProfItem = /*#__PURE__*/function () {
+    function ProfItem(container) {
+      _classCallCheck(this, ProfItem);
+      this.container = container;
+      this.btn = this.container.querySelector(".prof-item__btn");
+      this.linkIsActive = true;
+      if (this.container && this.btn) {
+        this.init();
+      }
+    }
+    _createClass(ProfItem, [{
+      key: "init",
+      value: function init() {
+        var _this = this;
+        this.btn.addEventListener("mouseenter", function () {
+          _this.linkIsActive = false;
+        });
+        this.btn.addEventListener("mouseleave", function (e) {
+          _this.linkIsActive = true;
+        });
+        this.container.addEventListener("click", function (e) {
+          if (!_this.linkIsActive) {
+            e.preventDefault();
+          }
+        });
+      }
+    }]);
+    return ProfItem;
+  }();
   var startWindowSize = window.innerWidth;
   var breackpoint = 1024;
   var isDescktop = startWindowSize > breackpoint;
@@ -71,11 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
     _createClass(HeaderDrop, [{
       key: "init",
       value: function init() {
-        var _this = this;
+        var _this2 = this;
         this.maxHeight = this.content.offsetHeight * 1.5;
         if (window.matchMedia("(max-width: 1024px)").matches) {
           this.btn.addEventListener("click", function (e) {
-            return _this.handleClick.call(_this, e);
+            return _this2.handleClick.call(_this2, e);
           });
         } else {
           this.container.addEventListener("mouseenter", this.open.bind(this));
@@ -245,19 +274,19 @@ document.addEventListener("DOMContentLoaded", function () {
     _createClass(Header, [{
       key: "init",
       value: function init() {
-        var _this2 = this;
+        var _this3 = this;
         window.addEventListener("scroll", function () {
           if (window.scrollY > 200) {
-            _this2.header.classList.add("_active");
-            if (_this2.prevPos > window.scrollY) {
-              _this2.show();
+            _this3.header.classList.add("_active");
+            if (_this3.prevPos > window.scrollY) {
+              _this3.show();
             } else {
-              _this2.hide();
+              _this3.hide();
             }
           } else {
-            _this2.header.classList.remove("_active");
+            _this3.header.classList.remove("_active");
           }
-          _this2.prevPos = window.scrollY;
+          _this3.prevPos = window.scrollY;
         });
       }
     }, {
@@ -326,10 +355,10 @@ document.addEventListener("DOMContentLoaded", function () {
     _createClass(HeaderSearch, [{
       key: "init",
       value: function init() {
-        var _this3 = this;
+        var _this4 = this;
         this.openBtn.addEventListener("click", function (e) {
           e.stopPropagation();
-          _this3.open.call(_this3);
+          _this4.open.call(_this4);
         });
         this.inner.addEventListener("click", function (e) {
           return e.stopPropagation();
@@ -355,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var _header = document.querySelector(".header");
     if (form) {
       formBtns.forEach(function (btn) {
-        btn.addEventListener("click", function () {
+        btn.addEventListener("click", function (e) {
           var hh = _header.offsetHeight;
           var formY = form.getBoundingClientRect().y;
           var winY = window.scrollY;
@@ -502,4 +531,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+  var profItemы = document.querySelectorAll(".prof-item");
+  profItemы.forEach(function (item) {
+    return new ProfItem(item);
+  });
 });

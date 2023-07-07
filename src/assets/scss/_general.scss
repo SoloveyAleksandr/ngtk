@@ -37,6 +37,7 @@ html {
 }
 
 .prof-item {
+  display: block;
   height: 66rem;
   padding: 0.2rem;
   border-radius: 0.8rem;
@@ -45,6 +46,17 @@ html {
 
   @include breakpoint($sm-bp) {
     height: 48rem;
+  }
+
+  &._none-events {
+    pointer-events: none;
+
+    .prof-item__btn {
+      height: 4.8rem;
+      opacity: 1;
+      pointer-events: all;
+      margin-top: 2rem;
+    }
   }
 
   &:hover & {

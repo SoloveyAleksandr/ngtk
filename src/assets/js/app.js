@@ -28,6 +28,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class ProfItem {
+    constructor(container) {
+      this.container = container;
+      this.btn = this.container.querySelector(".prof-item__btn");
+      this.linkIsActive = true;
+
+      if (this.container && this.btn) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.btn.addEventListener("mouseenter", () => {
+        this.linkIsActive = false;
+      });
+      this.btn.addEventListener("mouseleave", (e) => {
+        this.linkIsActive = true;
+      });
+
+      this.container.addEventListener("click", (e) => {
+        if (!this.linkIsActive) {
+          e.preventDefault();
+        }
+      })
+    }
+  }
+
   const startWindowSize = window.innerWidth;
   const breackpoint = 1024;
   const isDescktop = startWindowSize > breackpoint;
@@ -312,7 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (form) {
       formBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (e) => {
           const hh = header.offsetHeight;
           const formY = form.getBoundingClientRect().y;
 
@@ -469,5 +496,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  const profItemы = document.querySelectorAll(".prof-item");
+  profItemы.forEach(item => new ProfItem(item));
 
 })
